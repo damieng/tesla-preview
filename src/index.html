@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Tesla Garage</title>
+		<link rel="stylesheet" href="styles/main.css">
+	</head>
+	<body>
+		<main class="wrapper">
+			<header class="container">
+			</header>
+		</main>
+		<form id="options">
+			<label>Color
+				<select id="paint">
+					<optgroup label="Signature">
+						<option value="COL0-PPSR">Red</option>
+					</option>
+					<optgroup label="Solid">
+						<option value="COL1-PBSB">Eclipse Black</option>
+						<option value="COL1-PBCW">Catalina White</option>
+					</optgroup>
+					<optgroup label="Metallic">
+						<option value="COL2-PMBL">Obsidian Black</option>
+						<option value="COL2-PMMB">Pacific Blue</option>
+						<option value="COL2-PPSB">Deep Blue</option>
+						<option value="COL2-PMAB">Anza Brown</option>
+						<option value="COL2-PMSG">Sequoia Green</option>
+						<option value="COL2-PMTG">Dolphin Grey</option>
+						<option value="COL2-PMSS">Starlight Silver</option>
+						<option value="COL2-PMNG">Midnight Silver</option>
+						<option value="COL2-PPTI">Titanium</option>
+					</optgroup>
+					<optgroup label="Multi-Coat">
+						<option value="COL3-PPMR">Sunset Red</option>
+						<option value="COL3-PPSW">Pearl White</option>
+					</optgroup>
+				</select>
+			</label>
+			<label>Wheels
+				<select id="wheels">
+					<optgroup label="19″">
+						<option value="WTAS">Silver Slipstream</option>
+						<option value="WTDS">Grey Slipstream</option>
+						<option value="WTTB">Silver Cyclone</option>
+					</optgroup>
+					<optgroup label="21″">
+						<option value="WT21">Silver Slipstream</option>
+						<option value="WTSG">Grey Slipstream</option>
+					</optgroup>
+				</select>
+			</label>
+			<label>Interior trim
+				<select id="interior">
+					<option value="IVBSW">Ultra White</option>
+					<option value="IVBPP">All Black</option>
+					<option value="QTPC">Cream Premium</option>
+					<option value="QTPW">White Premium</option>
+					<option value="QTPP">Black Premium</option>
+					<option value="LT00">Vegan</option>
+					<option value="LT01">Standard</option>
+				</select>
+			</label>
+			<label>Roof
+				<select id="roof">
+					<option value="">Solid</option>
+					<option value="RFFG">Glass</option>
+					<option value="RFP2">Sunroof</option>
+				</select>
+			</label>
+			<label>View
+				<select id="view">
+					<optgroup label="Exterior">
+						<option value="STUD_SIDE">Side</option>
+						<option value="STUD_3QTR">Front</option>
+						<option value="STUD_REAR">Rear</option>
+					</optgroup>
+					<optgroup label="Interior">
+						<option value="STUD_SEAT">Side</option>
+						<option value="STUD_SEAT_3QTR">Front seat</option>
+						<option value="STUD_SEAT_ABOVE">Above</option>
+					</optgroup>
+				</select>
+			</label>
+			<input id="transparent" type="checkbox">Transparent background</input>
+		</form>
+		<section id="visual">
+			<img id="preview" src="https://www.tesla.com/configurator/compositor/?model=ms&view=STUD_SIDE&size=2040&options=DRLH,FG00,COL2-PMMB,RFPO,TP01,WT19,X019,X024&bkba_opt=1" />
+		</section>
+		<footer>
+			<p id="debug" />
+		</footer>
+		<script src="scripts/main.js"></script>
+	</body>
+</html>
