@@ -41,32 +41,72 @@
 			<label>Wheels
 				<select id="wheels">
 					<optgroup label="19″">
+						<option value="WT19">Silver Split 5-Spoke</option>
+						<option value="WTAE">Silver Aero</option>
 						<option value="WTAS">Silver Slipstream</option>
-						<option value="WTDS">Grey Slipstream</option>
+						<option value="WTDS">Grey Slipstream (2016+)</option>
 						<option value="WTTB">Silver Cyclone</option>
+						<option value="WTGP">Grey Cyclone (&lt;2016)</option>
 					</optgroup>
 					<optgroup label="21″">
-						<option value="WT21">Silver Slipstream</option>
-						<option value="WTSG">Grey Slipstream</option>
+						<option value="WT21">Silver Turbine</option>
+						<option value="WTSG">Grey Turbine</option>
 					</optgroup>
 				</select>
 			</label>
-			<label>Interior trim
-				<select id="interior">
-					<option value="IVBSW">Ultra White</option>
-					<option value="IVBPP">All Black</option>
-					<option value="QTPC">Cream Premium</option>
-					<option value="QTPW">White Premium</option>
-					<option value="QTPP">Black Premium</option>
-					<option value="LT00">Vegan</option>
-					<option value="LT01">Standard</option>
+			<label>Seats
+				<select id="seats">
+					<optgroup label="Textile">
+						<option value="IBMB">Black</option>
+					</optgroup>
+					<optgroup label="Leather">
+						<option value="IPMB">Black</option>
+						<option value="IPMG">Gray</option>
+						<option value="IPMT">Tan</option>
+					</optgroup>
+					<optgroup label="Performance Leather">
+						<option value="IZZW">White</option>
+						<option value="IZMB">Black</option>
+						<option value="IZMG">Gray</option>
+						<option value="IZMT">Tan</option>
+					</optgroup>
+					<optgroup label="Signature Perforated Leather">
+						<option value="ISZW">White</option>
+						<option value="ISZB">Black</option>
+						<option value="ISZT">Tan</option>
+					</optgroup>
+				</select>
+				<label>Decor
+					<select id="decor">
+						<option value="IDCF">Carbon Fiber</option>
+						<option value="IDLW">Lacewood</option>
+						<option value="IDOM">Obeche Matte</option>
+						<option value="IDOG">Obeche Gloss</option>
+						<option value="IDPB">Piano Black</option>
+						<option value="IDBA">Dark Ash Wood</option>
+						<option value="IDBO">Figured Ash Wood (2016+)</option>
+						<option value="IDPB">Piano Black</option>
+					</select>
+			</label>
+			<label>Headliner
+				<select id="headliner">
+					<option value="">Light + Dark Bar</option>
+					<option value="UTAW">Light/White</option>
+					<option value="UTAB">Dark/Black</option>
 				</select>
 			</label>
 			<label>Roof
 				<select id="roof">
-					<option value="">Solid</option>
-					<option value="RFFG">Glass</option>
+					<option value="RFBK">Solid Color</option>
+					<option value="RFBK">Solid Black</option>
 					<option value="RFP2">Sunroof</option>
+					<option value="RFPO">Panoramic</option>
+				</select>
+			</label>
+			<label>Brakes
+				<select id="brakes">
+					<option value="BC0B">Black</option>
+					<option value="BC0R">Red</option>
 				</select>
 			</label>
 			<label>View
@@ -80,13 +120,15 @@
 						<option value="STUD_SEAT">Side</option>
 						<option value="STUD_SEAT_3QTR">Front seat</option>
 						<option value="STUD_SEAT_ABOVE">Above</option>
+						<option value="STUD_SEAT_ALTA">Seats</option>
 					</optgroup>
 				</select>
 			</label>
+			<input id="refresh2016" type="checkbox">2016 refresh</input>
 			<input id="transparent" type="checkbox">Transparent background</input>
 		</form>
 		<section id="visual">
-			<img id="preview" src="https://www.tesla.com/configurator/compositor/?model=ms&view=STUD_SIDE&size=2040&options=DRLH,FG00,COL2-PMMB,RFPO,TP01,WT19,X019,X024&bkba_opt=1" />
+			<img id="preview" />
 		</section>
 		<footer>
 			<p id="debug" />

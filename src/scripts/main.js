@@ -1,6 +1,6 @@
 'use strict';
 
-const optionIds = [ 'paint', 'wheels', 'roof', 'interior' ]
+const optionIds = [ 'paint', 'wheels', 'roof', 'seats', 'decor', 'headliner', 'brakes' ]
 function $(id) {return document.getElementById(id) }
 
 captureChanges()
@@ -11,6 +11,7 @@ function captureChanges() {
 }
 
 function updateUrl() {
+  $('preview').src = ''
   $('preview').src = buildUrl()
 }
 
@@ -22,11 +23,11 @@ function buildUrl() {
     "options": buildOptions(),
   }
   if ($('transparent').checked) parts.bkba_opt = 1
+  if ($('refresh2016').checked) parts.options += ',MI01'
   const params = Object.entries(parts).map(kv => `${kv[0]}=${kv[1]}`).join('&')
-  $('debug').innerText = params
   return `https://www.tesla.com/configurator/compositor/?${params}`
 }
 
 function buildOptions() {
-  return optionIds.map(id => $(id).value).filter(v => v != null && v != '').join(',')
+  return optionIds.map(id => $(id).value).filter(v => v != null && v != '')
 }
