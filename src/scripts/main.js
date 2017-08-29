@@ -24,6 +24,7 @@ function buildUrl() {
   }
   if ($('transparent').checked) parts.bkba_opt = 1
   if ($('refresh2016').checked) parts.options += ',MI01'
+  if ($('rearspoiler').checked) parts.options += ',X019'
   const params = Object.entries(parts).map(kv => `${kv[0]}=${kv[1]}`).join('&')
   return `https://www.tesla.com/configurator/compositor/?${params}`
 }
