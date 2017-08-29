@@ -2,6 +2,8 @@
 
 const optionIds = [ 'paint', 'wheels', 'roof', 'seats', 'decor', 'headliner', 'brakes' ]
 function $(id) {return document.getElementById(id) }
+const preview = $('preview')
+preview.onload = () => preview.style.opacity = 1
 
 captureChanges()
 updateUrl()
@@ -11,8 +13,8 @@ function captureChanges() {
 }
 
 function updateUrl() {
-  $('preview').src = ''
-  $('preview').src = buildUrl()
+  preview.style.opacity = 0.5
+  preview.src = buildUrl()
 }
 
 function buildUrl() {
@@ -22,7 +24,7 @@ function buildUrl() {
     "size": 2048,
     "options": buildOptions(),
   }
-  if ($('transparent').checked) parts.bkba_opt = 1
+  if ($('transparent').checked) parts.bkba_opt = 2
   if ($('refresh2016').checked) parts.options += ',MI01'
   if ($('rearspoiler').checked) parts.options += ',X019'
   const params = Object.entries(parts).map(kv => `${kv[0]}=${kv[1]}`).join('&')
