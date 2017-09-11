@@ -1,6 +1,8 @@
 body {
 	font-family: "Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  height: 100vh;
 }
-#visual img {
+
+#single {
 	width: 100%
 }

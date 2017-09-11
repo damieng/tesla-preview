@@ -50,12 +50,12 @@
 			<label>Wheels
 				<select id="wheels">
 					<optgroup label="19″">
-						<option value="WT19">Silver Split 5-Spoke (&lt;2016)</option>
-						<option value="WTAE">Silver Aero (&lt;2016)</option>
+						<option value="WT19">Silver Split 5-Spoke (2012)</option>
+						<option value="WTAE">Silver Aero (2016)</option>
 						<option value="WTAS">Silver Slipstream</option>
-						<option value="WTDS">Grey Slipstream (2016+)</option>
+						<option value="WTDS">Grey Slipstream (2016)</option>
 						<option value="WTTB">Silver Cyclone</option>
-						<option value="WTGP">Grey Cyclone (&lt;2016)</option>
+						<option value="WTGP">Grey Cyclone (2016)</option>
 					</optgroup>
 					<optgroup label="21″">
 						<option value="WT21">Silver Turbine</option>
@@ -80,9 +80,9 @@
 						<option value="IZMT">Tan</option>
 					</optgroup>
 					<optgroup label="Signature Perforated Leather">
-						<option value="ISZW">White (&lt;2016)</option>
-						<option value="ISZB">Black (&lt;2016)</option>
-						<option value="ISZT">Tan (&lt;2016)</option>
+						<option value="ISZW">White (2012)</option>
+						<option value="ISZB">Black (2012)</option>
+						<option value="ISZT">Tan (2012)</option>
 					</optgroup>
 				</select>
 				<label>Decor
@@ -106,9 +106,10 @@
 			<label>Roof
 				<select id="roof">
 					<option value="RFBC">Solid Color</option>
-					<option value="RFBK">Solid Black (&lt;2016)</option>
-					<option value="RFP2">Sunroof</option>
-					<option value="RFPO">Panoramic</option>
+					<option value="RFBK">Solid Black (2012)</option>
+					<option value="RFPO">Panoramic Sunroof</option>
+					<option value="RFP2">Panoramic Sunroof v2</option>
+					<option value="RFFG">Full Glass (2016)</option>
 				</select>
 			</label>
 			<label>Brakes
@@ -127,19 +128,26 @@
 						<option value="OUT1_3QTR">Outside 3D (2012)</option>
 					</optgroup>
 					<optgroup label="Interior">
-						<option value="STUD_SEAT">Side</option>
-						<option value="STUD_SEAT_DRIVER">Drivers seat (2012)</option>
-						<option value="STUD_SEAT_3QTR">Passenger seat (2012)</option>
+						<option value="STUD_SEAT">Side (2012)</option>
+						<option value="STUD_SEAT_DRIVER">Driver (2012)</option>
+						<option value="STUD_SEAT_3QTR">Passenger (2012)</option>
 						<option value="STUD_SEAT_ABOVE">Above</option>
 						<option value="STUD_SEAT_ALTA">Seats (2016)</option>
 					</optgroup>
 				</select>
 			</label>
 			<input id="rearspoiler" type="checkbox">Rear Spoiler</input>
-			<input id="transparent" type="checkbox">Transparent background</input>
+			<label>Background
+				<select id="background">
+					<option value="0">Tiled showroom</option>
+					<option value="1">Alpha layer</option>
+					<option value="2">White background</option>
+					<option value="3">Grey background</option>
+				</select>
+			</label>
 		</form>
 		<section id="visual">
-			<img id="preview" />
+			<img id="single" />
 		</section>
 		<footer>
 			<p id="debug" />
