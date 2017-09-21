@@ -5,7 +5,7 @@ function $(id) {return document.getElementById(id) }
 const allImages = $('visual').getElementsByTagName('img')
 const single = $('single')
 const model = $('model')
-setAttributes(allImages, 'onload', () => this.style.opacity = 1)
+//setAttributes(allImages, 'onload', "this.style.opacity = 1")
 
 captureChanges()
 setModel()
