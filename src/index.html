@@ -12,44 +12,56 @@
 			</header>
 		</main>
 		<form id="options">
+			<label>Model
+				<select id="model">
+					<option value="m3">3</option>
+					<option value="ms">S</option>
+				</select>
 			<label>Paint
 				<select id="paint">
-					<optgroup label="Signature">
+					<optgroup class="ms" label="Signature">
 						<option value="COL0-PPSR">Red (2012)</option>
 					</option>
 					<optgroup label="Solid">
-						<option value="COL1-PBSB">Eclipse Black (2012)</option>
-						<option value="COL1-PBSB,MI01">Eclipse Black (2016)</option>
-						<option value="COL1-PBCW">Catalina White (2012)</option>
-						<option value="COL1-PBCW,MI01">Catalina White (2016)</option>
+						<option class="m3" value="PBSB">Black</option>
+						<option class="ms" value="COL1-PBSB">Eclipse Black (2012)</option>
+						<option class="ms" value="COL1-PBSB,MI01">Eclipse Black (2016)</option>
+						<option class="ms" value="COL1-PBCW">Catalina White (2012)</option>
+						<option class="ms" value="COL1-PBCW,MI01">Catalina White (2016)</option>
 					</optgroup>
 					<optgroup label="Metallic">
-						<option value="COL2-PMBL">Obsidian Black (2012)</option>
-						<option value="COL2-PMBL,MI01">Obsidian Black (2016)</option>
-						<option value="COL2-PMMB">Pacific Blue (2012)</option>
-						<option value="COL2-PPSB">Deep Blue (2012)</option>
-						<option value="COL2-PPSB,MI01">Deep Blue (2016)</option>
-						<option value="COL2-PMAB">Anza Brown (2012)</option>
-						<option value="COL2-PMSG">Sequoia Green (2012)</option>
-						<option value="COL2-PMTG">Dolphin Grey (2012)</option>
-						<option value="COL2-PMSS">Starlight Silver (2012)</option>
-						<option value="COL2-PMSS,MI01">Starlight Silver (2016)</option>
-						<option value="COL2-PMNG">Midnight Silver (2012)</option>
-						<option value="COL2-PMNG,MI01">Midnight Silver (2016)</option>
-						<option value="COL2-PPTI">Titanium (2012)</option>
-						<option value="COL2-PPTI,MI01">Titanium (2016)</option>
+						<option class="m3" value="PPSB">Deep Blue</option>
+						<option class="m3" value="PMLS">Silver</option>
+						<option class="m3" value="PMNG">Midnight Silver</option>
+						<option class="m3" value="PMSS">Silver (again?)</option>
+						<option class="ms" value="COL2-PMBL">Obsidian Black (2012)</option>
+						<option class="ms" value="COL2-PMBL,MI01">Obsidian Black (2016)</option>
+						<option class="ms" value="COL2-PMMB">Pacific Blue (2012)</option>
+						<option class="ms" value="COL2-PPSB">Deep Blue (2012)</option>
+						<option class="ms" value="COL2-PPSB,MI01">Deep Blue (2016)</option>
+						<option class="ms" value="COL2-PMAB">Anza Brown (2012)</option>
+						<option class="ms" value="COL2-PMSG">Sequoia Green (2012)</option>
+						<option class="ms" value="COL2-PMTG">Dolphin Grey (2012)</option>
+						<option class="ms" value="COL2-PMSS">Starlight Silver (2012)</option>
+						<option class="ms" value="COL2-PMSS,MI01">Starlight Silver (2016)</option>
+						<option class="ms" value="COL2-PMNG">Midnight Silver (2012)</option>
+						<option class="ms" value="COL2-PMNG,MI01">Midnight Silver (2016)</option>
+						<option class="ms" value="COL2-PPTI">Titanium (2012)</option>
+						<option class="ms" value="COL2-PPTI,MI01">Titanium (2016)</option>
 					</optgroup>
 					<optgroup label="Multi-Coat">
-						<option value="COL3-PPMR">Sunset Red (2012)</option>
-						<option value="COL3-PPMR,MI01">Sunset Red (2016)</option>
-						<option value="COL3-PPSW">Pearl White (2012)</option>
-						<option value="COL3-PPSW,MI01">Pearl White (2016)</option>
+						<option class="m3" value="PPMR">Red</option>
+						<option class="m3" value="PPSW">Pearl White</option>
+						<option class="ms" value="COL3-PPMR">Sunset Red (2012)</option>
+						<option class="ms" value="COL3-PPMR,MI01">Sunset Red (2016)</option>
+						<option class="ms" value="COL3-PPSW">Pearl White (2012)</option>
+						<option class="ms" value="COL3-PPSW,MI01">Pearl White (2016)</option>
 					</optgroup>
 				</select>
 			</label>
 			<label>Wheels
 				<select id="wheels">
-					<optgroup label="19″">
+					<optgroup class="ms" label="19″">
 						<option value="WT19">Silver Split 5-Spoke (2012)</option>
 						<option value="WTAE">Silver Aero (2016)</option>
 						<option value="WTAS">Silver Slipstream</option>
@@ -57,13 +69,13 @@
 						<option value="WTTB">Silver Cyclone</option>
 						<option value="WTGP">Grey Cyclone (2016)</option>
 					</optgroup>
-					<optgroup label="21″">
+					<optgroup class="ms" label="21″">
 						<option value="WT21">Silver Turbine</option>
 						<option value="WTSG">Grey Turbine</option>
 					</optgroup>
 				</select>
 			</label>
-			<label>Seats
+			<label class="ms">Seats
 				<select id="seats">
 					<optgroup label="Textile">
 						<option value="IBMB">Black</option>
@@ -85,25 +97,26 @@
 						<option value="ISZT">Tan (2012)</option>
 					</optgroup>
 				</select>
-				<label>Decor
-					<select id="decor">
-						<option value="IDCF">Carbon Fiber</option>
-						<option value="IDLW">Lacewood</option>
-						<option value="IDOM">Obeche Matte</option>
-						<option value="IDOG">Obeche Gloss</option>
-						<option value="IDPB">Piano Black</option>
-						<option value="IDBA">Dark Ash Wood</option>
-						<option value="IDBO">Figured Ash Wood (2016+)</option>
-					</select>
 			</label>
-			<label>Headliner
+			<label class="ms">Decor
+				<select id="decor">
+					<option value="IDCF">Carbon Fiber</option>
+					<option value="IDLW">Lacewood</option>
+					<option value="IDOM">Obeche Matte</option>
+					<option value="IDOG">Obeche Gloss</option>
+					<option value="IDPB">Piano Black</option>
+					<option value="IDBA">Dark Ash Wood</option>
+					<option value="IDBO">Figured Ash Wood (2016+)</option>
+				</select>
+			</label>
+			<label class="ms">Headliner
 				<select id="headliner">
 					<option value="">Light + Dark Bar</option>
 					<option value="UTAW">Light/White</option>
 					<option value="UTAB">Dark/Black</option>
 				</select>
 			</label>
-			<label>Roof
+			<label class="ms">Roof
 				<select id="roof">
 					<option value="RFBC">Solid Color</option>
 					<option value="RFBK">Solid Black (2012)</option>
@@ -112,34 +125,34 @@
 					<option value="RFFG">Full Glass (2016)</option>
 				</select>
 			</label>
-			<label>Brakes
+			<label class="ms">Brakes
 				<select id="brakes">
 					<option value="BC0B">Black</option>
 					<option value="BC0R">Red</option>
 				</select>
 			</label>
+			<input class="ms" id="rearspoiler" type="checkbox">Rear Spoiler</input>
 			<label>View
 				<select id="view">
 					<optgroup label="Exterior">
 						<option value="STUD_SIDE">Side</option>
 						<option value="STUD_3QTR">Front</option>
-						<option value="STUD_REAR">Rear</option>
-						<option value="STUD_ABOV">Above</option>
-						<option value="OUT1_3QTR">Outside 3D (2012)</option>
+						<option class="m3" value="STUD_REAR">Rear</option>
+						<option class="m3" value="STUD_ABOV">Above</option>
+						<option class="m3" value="OUT1_3QTR">Outside 3D (2012)</option>
 					</optgroup>
 					<optgroup label="Interior">
-						<option value="STUD_SEAT">Side (2012)</option>
-						<option value="STUD_SEAT_DRIVER">Driver (2012)</option>
-						<option value="STUD_SEAT_3QTR">Passenger (2012)</option>
-						<option value="STUD_SEAT_ABOVE">Above</option>
-						<option value="STUD_SEAT_ALTA">Seats (2016)</option>
+						<option value="STUD_SEAT">Side</option>
+						<option class="m3" value="STUD_SEAT_DRIVER">Driver (2012)</option>
+						<option class="m3" value="STUD_SEAT_3QTR">Passenger (2012)</option>
+						<option class="m3" value="STUD_SEAT_ABOVE">Above</option>
+						<option class="m3" value="STUD_SEAT_ALTA">Seats (2016)</option>
 					</optgroup>
 				</select>
 			</label>
-			<input id="rearspoiler" type="checkbox">Rear Spoiler</input>
 			<label>Background
 				<select id="background">
-					<option value="0">Tiled showroom</option>
+					<option class="ms" value="0">Tiled showroom</option>
 					<option value="1">Alpha layer</option>
 					<option value="2">White background</option>
 					<option value="3">Grey background</option>

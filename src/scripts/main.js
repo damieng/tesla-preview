@@ -4,13 +4,45 @@ const optionIds = [ 'paint', 'wheels', 'roof', 'seats', 'decor', 'headliner', 'b
 function $(id) {return document.getElementById(id) }
 const allImages = $('visual').getElementsByTagName('img')
 const single = $('single')
+const model = $('model')
 setAttributes(allImages, 'onload', () => this.style.opacity = 1)
 
 captureChanges()
+setModel()
 updateUrl()
 
 function captureChanges() {
+  model.onchange = setModel
   $('options').onchange = updateUrl
+}
+
+function setModel() {
+  setVisibility(document.getElementsByClassName('m3'), false);
+  setVisibility(document.getElementsByClassName('ms'), false);
+  setVisibility(document.getElementsByClassName(model.value), true);
+
+  switch(model.value) {
+    case 'm3': {
+      $('paint').value = 'PPSB';
+      if ($('background').value === '0') {
+        $('background').value = 1;
+      };
+      break;
+    }
+    case 'ms': {
+      $('paint').value = 'COL2-PPSB,MI01';
+      break;
+    }
+  }
+}
+
+function setVisibility(elements, visible) {
+  if (visible)
+    for (var i = 0; i < elements.length; i++)
+      elements[i].style.display = ''
+    else
+      for (var i = 0; i < elements.length; i++)
+        elements[i].style.display = 'none'
 }
 
 function updateUrl() {
@@ -37,7 +69,7 @@ function setAttributes(elements, attr, value) {
 
 function buildParts() {
   const parts = {
-    "model": "ms",
+    "model": model.value,
     "size": 2048,
     "options": buildOptions()
   }
