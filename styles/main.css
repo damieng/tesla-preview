@@ -13,6 +13,10 @@ fieldset {
 	margin-right: 1em;
 }
 
+label {
+	font-size: 0.9em;
+}
+
 legend {
 	padding-left: 0;
 	padding-right: 0.5em;
