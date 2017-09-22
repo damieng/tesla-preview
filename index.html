@@ -17,6 +17,7 @@
 					<option value="m3">3</option>
 					<option value="ms-2012">S (2012)</option>
 					<option value="ms-2016">S (2016)</option>
+					<option value="mx">X</option>
 				</select>
 			<label>Paint
 				<select id="paint">
@@ -25,35 +26,35 @@
 					</option>
 					<optgroup label="Solid">
 						<option class="m3" value="PBSB">Black</option>
-						<option class="ms" value="COL1-PBSB">Eclipse Black</option>
-						<option class="ms" value="COL1-PBCW">Catalina White</option>
+						<option class="ms mx" value="COL1-PBSB">Eclipse Black</option>
+						<option class="ms mx" value="COL1-PBCW">Catalina White</option>
 					</optgroup>
 					<optgroup label="Metallic">
 						<option class="m3" value="PPSB">Deep Blue</option>
 						<option class="m3" value="PMLS">Silver</option>
 						<option class="m3" value="PMNG">Midnight Silver</option>
 						<option class="m3" value="PMSS">Silver (again?)</option>
-						<option class="ms" value="COL2-PMBL">Obsidian Black</option>
+						<option class="ms mx" value="COL2-PMBL">Obsidian Black</option>
 						<option class="ms-2012" value="COL2-PMMB">Pacific Blue</option>
-						<option class="ms" value="COL2-PPSB">Deep Blue</option>
+						<option class="ms mx" value="COL2-PPSB">Deep Blue</option>
 						<option class="ms-2012" value="COL2-PMAB">Anza Brown</option>
 						<option class="ms-2012" value="COL2-PMSG">Sequoia Green</option>
 						<option class="ms-2012" value="COL2-PMTG">Dolphin Grey</option>
-						<option class="ms" value="COL2-PMSS">Starlight Silver</option>
-						<option class="ms" value="COL2-PMNG">Midnight Silver</option>
-						<option class="ms" value="COL2-PPTI">Titanium</option>
+						<option class="ms mx" value="COL2-PMSS">Starlight Silver</option>
+						<option class="ms mx" value="COL2-PMNG">Midnight Silver</option>
+						<option class="ms mx" value="COL2-PPTI">Titanium</option>
 					</optgroup>
 					<optgroup label="Multi-Coat">
 						<option class="m3" value="PPMR">Red</option>
 						<option class="m3" value="PPSW">Pearl White</option>
-						<option class="ms" value="COL3-PPMR">Sunset Red</option>
-						<option class="ms" value="COL3-PPSW">Pearl White</option>
+						<option class="ms mx" value="COL3-PPMR">Sunset Red</option>
+						<option class="ms mx" value="COL3-PPSW">Pearl White</option>
 					</optgroup>
 				</select>
 			</label>
-			<label class="ms">Wheels
+			<label class="ms mx">Wheels
 				<select id="wheels">
-					<optgroup label="19″">
+					<optgroup class="ms" label="19″">
 						<option class="ms-2012" value="WT19">Silver Split 5-Spoke</option>
 						<option class="ms-2012" value="WTAE">Silver Aero</option>
 						<option value="WTAS">Silver Slipstream</option>
@@ -61,9 +62,18 @@
 						<option value="WTTB">Silver Cyclone</option>
 						<option class="ms-2016" value="WTGP">Grey Cyclone</option>
 					</optgroup>
-					<optgroup label="21″">
+					<optgroup class="mx" label="20″">
+						<option value="WT20">Silver Slipstream</option>
+						<option value="WTSC">Carbon Slipstream</option>
+						<option value="WTHX">Silver Helix</option>
+					</optgroup>
+					<optgroup class="ms" label="21″">
 						<option value="WT21">Silver Turbine</option>
 						<option value="WTSG">Grey Turbine</option>
+					</optgroup>
+					<optgroup class="mx" label="22″">
+						<option value="WT22">Silver Turbine</option>
+						<option value="WTUT">Black Turbine</option>
 					</optgroup>
 				</select>
 			</label>
@@ -138,23 +148,23 @@
 					<optgroup label="Exterior">
 						<option value="STUD_SIDE">Side</option>
 						<option value="STUD_3QTR">Front</option>
-						<option class="ms" value="STUD_REAR">Rear</option>
+						<option class="ms mx" value="STUD_REAR">Rear</option>
 						<option class="ms" value="STUD_ABOV">Above</option>
 						<option class="ms-2012" value="OUT1_3QTR">Outside 3D</option>
 					</optgroup>
 					<optgroup label="Interior">
-						<option value="STUD_SEAT">Side</option>
+						<option class="ms m3" value="STUD_SEAT">Side</option>
 						<option class="ms-2012" value="STUD_SEAT_DRIVER">Driver</option>
 						<option class="ms-2012" value="STUD_SEAT_3QTR">Passenger</option>
-						<option class="ms" value="STUD_SEAT_ABOVE">Above</option>
+						<option class="ms mx" value="STUD_SEAT_ABOVE">Above</option>
 						<option class="ms-2016" value="STUD_SEAT_ALTA">Seats</option>
 					</optgroup>
 				</select>
 			</label>
 			<label>Background
 				<select id="background">
-					<option class="ms" value="0">Tiled showroom</option>
-					<option value="1">Alpha layer</option>
+					<option value="0">Showroom</option>
+					<option selected="selected" value="1">Alpha layer</option>
 					<option value="2">White background</option>
 					<option value="3">Grey background</option>
 				</select>

@@ -5,6 +5,7 @@ function $(id) {return document.getElementById(id) }
 const allImages = $('visual').getElementsByTagName('img')
 const single = $('single')
 const model = $('model')
+const view = $('view')
 //setAttributes(allImages, 'onload', "this.style.opacity = 1")
 
 captureChanges()
@@ -34,13 +35,13 @@ function isUnavailable(element) {
 function setModel() {
   setVisibility(document.getElementsByClassName('m3'), false);
   setVisibility(document.getElementsByClassName('ms'), false);
+  setVisibility(document.getElementsByClassName('mx'), false);
   setVisibility(document.getElementsByClassName('ms-2012'), false);
   setVisibility(document.getElementsByClassName('ms-2016'), false);
 
   switch (model.value) {
     case 'm3': {
       setVisibility(document.getElementsByClassName('m3'), true);
-      $('paint').value = 'PPSB';
       if ($('background').value === '0') {
         $('background').value = 1;
       };
@@ -54,6 +55,10 @@ function setModel() {
     case 'ms-2016': {
       setVisibility(document.getElementsByClassName('ms'), true);
       setVisibility(document.getElementsByClassName('ms-2016'), true);
+      break;
+    }
+    case 'mx': {
+      setVisibility(document.getElementsByClassName('mx'), true);
       break;
     }
   }
@@ -98,6 +103,7 @@ function buildParts() {
     "size": 2048,
     "options": buildOptions()
   }
+
   parts.bkba_opt = $('background').value
   if ($('model').value === 'ms-2016') parts.options += ',MI01'
   if ($('rearspoiler').checked) parts.options += ',X019'
