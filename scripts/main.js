@@ -6,7 +6,7 @@ const allImages = $('visual').getElementsByTagName('img')
 const single = $('single')
 const model = $('model')
 const view = $('view')
-//setAttributes(allImages, 'onload', "this.style.opacity = 1")
+setAttributes(allImages, 'onload', "this.style.opacity = 1")
 
 captureChanges()
 setModel()
@@ -83,12 +83,15 @@ function setVisibility(elements, visible) {
 }
 
 function updateUrl() {
-  setAttributes(allImages, 'style.opacity', 0.5)
+  setAttributes(allImages, 'style', 'opacity:0.5')
   const view = $('view').value
+  const parts = buildParts()
+  console.log(parts)
   switch (view) {
     default: {
       single.hidden = false
-      single.src = buildUrl(buildParts(), { "view": view })
+      single.src = buildUrl(parts, { "view": view })
+      single.title = parts.options.join(',')
     }
   }
 }
@@ -112,8 +115,8 @@ function buildParts() {
   }
 
   parts.bkba_opt = $('background').value
-  if ($('model').value === 'ms-2016') parts.options += ',MI01'
-  if ($('rearspoiler').checked) parts.options += ',X019'
+  if ($('model').value === 'ms-2016') parts.options.push('MI01')
+  if ($('rearspoiler').checked) parts.options.push('X019')
   return parts
 }
 
