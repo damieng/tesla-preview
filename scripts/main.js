@@ -86,7 +86,6 @@ function updateUrl() {
   setAttributes(allImages, 'style', 'opacity:0.5')
   const view = $('view').value
   const parts = buildParts()
-  console.log(parts)
   switch (view) {
     default: {
       single.hidden = false
