@@ -17,7 +17,7 @@
 				<select id="model">
 					<option value="m3">3</option>
 					<option value="ms-2012">S (2012)</option>
-					<option value="ms-2016">S (2016)</option>
+					<option selected="selected" value="ms-2016">S (2016)</option>
 					<option value="mx">X</option>
 				</select>
 			</fieldset>
@@ -85,8 +85,8 @@
 					<select id="roof">
 						<option class="ms-2012" value="RFBK">Solid Black</option>
 						<option value="RFBC">Solid Color</option>
-						<option value="RFPO">Panoramic Sunroof</option>
-						<option value="RFP2">Panoramic Sunroof v2</option>
+						<option value="RFPO">Pano Sunroof</option>
+						<option value="RFP2">Pano Sunroof v2</option>
 						<option class="ms-2016" value="RFFG">Full Glass</option>
 					</select>
 				</label>
@@ -100,6 +100,12 @@
 			</fieldset>
 			<fieldset class="ms mx">
 				<legend>Interior</legend>
+				<label class="ms mx">Drive
+					<select id="drive">
+						<option value="DRLH">Left</option>
+						<option value="DRRH">Right</option>
+					</select>
+				</label>
 				<label class="ms mx">Seats
 					<select id="seats">
 						<optgroup class="ms mx" label="Textile">
@@ -149,18 +155,20 @@
 						</optgroup>
 					</select>
 				</label>
-				<label class="ms-2012">Console
-					<select id="console">
-						<option value="YF00">Fabric Floor</option>
-						<option value="YF01">Yacht Floor</option>
-						<option value="YFFC">Integrated</option>
-					</select>
-				</label>
 				<label class="mx">Seating
 					<select id="seating">
 						<option value="SR07">7</option>
 						<option value="SR04">6</option>
 						<option value="SR05">5</option>
+					</select>
+				</label>
+				<label class="ms mx">Headliner
+					<select id="headliner">
+						<option value="UTMF">Fabric</option>
+						<option class="mx" value="UTPB">Black Plastic</option>
+						<option value="UTAB">Black Alcantara</option>
+						<option value="UTAW">White Alcantara</option>
+						<option class="ms" value="">White Alcantara (+Black)</option>
 					</select>
 				</label>
 				<label class="ms mx">Decor
@@ -174,44 +182,35 @@
 						<option class="ms-2016 mx" value="IDBO">Figured Ash Wood</option>
 					</select>
 				</label>
-				<label class="ms mx">Headliner
-					<select id="headliner">
-						<option value="UTMF">Standard Fabric</option>
-						<option class="mx" value="UTPB">Black Plastic</option>
-						<option value="UTAB">Black Alcantara</option>
-						<option class="ms" value="">White Alcantara (Black Bar)</option>
-						<option value="UTAW">White Alcantara</option>
+				<label class="ms-2012">Console
+					<select id="console">
+						<option value="YF00">Fabric Floor</option>
+						<option value="YF01">Yacht Floor</option>
+						<option value="YFFC">Integrated</option>
 					</select>
 				</label>
 			</fieldset>
 			<fieldset>
 				<legend>Render</legend>
-				<label>View
-					<select id="view">
-						<optgroup label="Exterior">
-							<option class="ms" value="STUD_ABOV">Above</option>
-							<option value="STUD_3QTR">Front</option>
-							<option class="ms-2012" value="OUT1_3QTR">Outside 3D</option>
-							<option class="ms mx" value="STUD_REAR">Rear</option>
-							<option selected="selected" value="STUD_SIDE">Side</option>
-						</optgroup>
-						<optgroup label="Interior">
-							<option class="ms mx" value="STUD_SEAT_ABOVE">Above</option>
-							<option class="ms-2012" value="STUD_SEAT_DRIVER">Driver</option>
-							<option class="ms-2012" value="STUD_SEAT_3QTR">Passenger</option>
-							<option class="ms-2016" value="STUD_SEAT_ALTA">Seats</option>
-							<option value="STUD_SEAT">Side</option>
-						</optgroup>
-					</select>
-				</label>
-				<label>Background
-					<select id="background">
-						<option value="0">Showroom</option>
-						<option selected="selected" value="1">Alpha layer</option>
-						<option value="2">White background</option>
-						<option value="3">Gray background</option>
-					</select>
-				</label>
+				<select id="view">
+						<option class="ms" value="STUD_ABOV">Above rear</option>
+						<option value="STUD_3QTR">Front</option>
+						<option class="ms mx" value="STUD_REAR">Rear</option>
+						<option selected="selected" value="STUD_SIDE">Side</option>
+						<option class="ms mx" value="STUD_SEAT_ABOVE">Above seating</option>
+						<option class="ms-2012" value="STUD_SEAT_DRIVER">Driver seat</option>
+						<option class="ms-2012" value="STUD_SEAT_3QTR">Passenger seat</option>
+						<option class="ms" value="STUD_SEAT_ALTA">Angled seating</option>
+						<option class="ms-2012" value="OUT1_3QTR">Outside 3D</option>
+						<option class="ms-2012 mx m3" value="STUD_SEAT">Seating</option>
+					</optgroup>
+				</select>
+				<select id="background">
+					<option value="0">Showroom</option>
+					<option selected="selected" value="1">Transparent</option>
+					<option value="2">White</option>
+					<option value="3">Gray</option>
+				</select>
 			</fieldset>
 		</form>
 		<section id="visual">

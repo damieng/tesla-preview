@@ -1,6 +1,12 @@
 body {
 	font-family: "Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
   height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+form {
+	margin: 2px;
 }
 
 fieldset {
@@ -15,12 +21,21 @@ fieldset {
 
 label {
 	font-size: 0.9em;
+	white-space: nowrap;
+}
+
+select {
+	margin: 1px;
 }
 
 legend {
 	padding-left: 0;
 	padding-right: 0.5em;
 	font-weight: bold;
+}
+
+#seats {
+	width: 10em;
 }
 
 #single {
