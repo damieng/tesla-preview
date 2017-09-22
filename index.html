@@ -39,7 +39,7 @@
 						<option class="ms mx" value="COL2-PPSB">Deep Blue</option>
 						<option class="ms-2012" value="COL2-PMAB">Anza Brown</option>
 						<option class="ms-2012" value="COL2-PMSG">Sequoia Green</option>
-						<option class="ms-2012" value="COL2-PMTG">Dolphin Grey</option>
+						<option class="ms-2012" value="COL2-PMTG">Dolphin Gray</option>
 						<option class="ms mx" value="COL2-PMSS">Starlight Silver</option>
 						<option class="ms mx" value="COL2-PMNG">Midnight Silver</option>
 						<option class="ms mx" value="COL2-PPTI">Titanium</option>
@@ -58,9 +58,9 @@
 						<option class="ms-2012" value="WT19">Silver Split 5-Spoke</option>
 						<option class="ms-2012" value="WTAE">Silver Aero</option>
 						<option value="WTAS">Silver Slipstream</option>
-						<option class="ms-2016" value="WTDS">Grey Slipstream</option>
+						<option class="ms-2016" value="WTDS">Gray Slipstream</option>
 						<option value="WTTB">Silver Cyclone</option>
-						<option class="ms-2016" value="WTGP">Grey Cyclone</option>
+						<option class="ms-2016" value="WTGP">Gray Cyclone</option>
 					</optgroup>
 					<optgroup class="mx" label="20″">
 						<option value="WT20">Silver Slipstream</option>
@@ -69,7 +69,7 @@
 					</optgroup>
 					<optgroup class="ms" label="21″">
 						<option value="WT21">Silver Turbine</option>
-						<option value="WTSG">Grey Turbine</option>
+						<option value="WTSG">Gray Turbine</option>
 					</optgroup>
 					<optgroup class="mx" label="22″">
 						<option value="WT22">Silver Turbine</option>
@@ -88,10 +88,18 @@
 						<option value="IPMG">Gray</option>
 						<option value="IPMT">Tan</option>
 					</optgroup>
+					<optgroup class="ms-2012" label="Signature Leather">
+						<option value="ISZW">White Perforated</option>
+					</optgroup>
 					<optgroup class="ms mx" label="Leather">
 						<option value="QPMB">Black</option>
+						<option value="QPMG">Gray</option>
 						<option value="QPMT">Tan</option>
-						<option value="QPMW">White</option>
+					</optgroup>
+					<optgroup class="ms" label="Leather Executive">
+						<option value="QPMB,SR02">Black</option>
+						<option value="QPMG,SR02">Gray</option>
+						<option value="QPMT,SR02">Tan</option>
 					</optgroup>
 					<optgroup class="ms-2016" label="Premium">
 						<option value="QTPP">Black</option>
@@ -99,27 +107,28 @@
 						<option value="QTPW">White</option>
 					</optgroup>
 					<optgroup label="Performance Leather">
-						<option value="IZZW">White</option>
 						<option value="IZMB">Black</option>
 						<option value="IZMG">Gray</option>
 						<option value="IZMT">Tan</option>
-					</optgroup>
-					<optgroup class="ms-2012" label="Signature Perforated">
-						<option value="ISZW">White Leather</option>
-						<option value="ISZB">Black Leather</option>
-						<option value="ISZT">Tan Leather</option>
+						<option value="IZZW">White</option>
 					</optgroup>
 				</select>
 			</label>
-			<label class="ms">Decor
+			<label class="mx">Seating
+				<select id="seating">
+					<option class="mx" value="SR05">5</option>
+					<option selected="selected" class="mx" value="SR07">7</option>
+				</select>
+			</label>
+			<label class="ms mx">Decor
 				<select id="decor">
 					<option value="IDCF">Carbon Fiber</option>
-					<option value="IDLW">Lacewood</option>
+					<option class="ms" value="IDLW">Lacewood</option>
 					<option value="IDOM">Obeche Matte</option>
 					<option value="IDOG">Obeche Gloss</option>
-					<option value="IDPB">Piano Black</option>
-					<option value="IDBA">Dark Ash Wood</option>
-					<option class="ms-2016" value="IDBO">Figured Ash Wood</option>
+					<option class="ms" value="IDPB">Piano Black</option>
+					<option class="ms" value="IDBA">Dark Ash Wood</option>
+					<option class="ms-2016 mx" value="IDBO">Figured Ash Wood</option>
 				</select>
 			</label>
 			<label class="ms">Headliner
@@ -131,8 +140,8 @@
 			</label>
 			<label class="ms">Roof
 				<select id="roof">
-					<option value="RFBC">Solid Color</option>
 					<option class="ms-2012" value="RFBK">Solid Black</option>
+					<option value="RFBC">Solid Color</option>
 					<option value="RFPO">Panoramic Sunroof</option>
 					<option value="RFP2">Panoramic Sunroof v2</option>
 					<option class="ms-2016" value="RFFG">Full Glass</option>
@@ -148,18 +157,18 @@
 			<label>View
 				<select id="view">
 					<optgroup label="Exterior">
-						<option value="STUD_SIDE">Side</option>
-						<option value="STUD_3QTR">Front</option>
-						<option class="ms mx" value="STUD_REAR">Rear</option>
 						<option class="ms" value="STUD_ABOV">Above</option>
+						<option value="STUD_3QTR">Front</option>
 						<option class="ms-2012" value="OUT1_3QTR">Outside 3D</option>
+						<option class="ms mx" value="STUD_REAR">Rear</option>
+						<option selected="selected" value="STUD_SIDE">Side</option>
 					</optgroup>
 					<optgroup label="Interior">
-						<option value="STUD_SEAT">Side</option>
+						<option class="ms mx" value="STUD_SEAT_ABOVE">Above</option>
 						<option class="ms-2012" value="STUD_SEAT_DRIVER">Driver</option>
 						<option class="ms-2012" value="STUD_SEAT_3QTR">Passenger</option>
-						<option class="ms mx" value="STUD_SEAT_ABOVE">Above</option>
 						<option class="ms-2016" value="STUD_SEAT_ALTA">Seats</option>
+						<option value="STUD_SEAT">Side</option>
 					</optgroup>
 				</select>
 			</label>
@@ -168,7 +177,7 @@
 					<option value="0">Showroom</option>
 					<option selected="selected" value="1">Alpha layer</option>
 					<option value="2">White background</option>
-					<option value="3">Grey background</option>
+					<option value="3">Gray background</option>
 				</select>
 			</label>
 		</form>

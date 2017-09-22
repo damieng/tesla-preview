@@ -1,6 +1,6 @@
 'use strict';
 
-const optionIds = [ 'paint', 'wheels', 'roof', 'seats', 'decor', 'headliner', 'brakes' ]
+const optionIds = [ 'paint', 'wheels', 'roof', 'seats', 'seating', 'decor', 'headliner', 'brakes' ]
 function $(id) {return document.getElementById(id) }
 const allImages = $('visual').getElementsByTagName('img')
 const single = $('single')
@@ -29,7 +29,7 @@ function deselectUnavailableOptions() {
 }
 
 function isUnavailable(element) {
-  return [element, element.parentNode, element.parentNode.parentNode].find(p => p.style.display === 'none') != null;
+  return [element, element.parentNode, element.parentNode.parentNode, element.parentNode.parentNode.parentNode].find(p => p.style.display === 'none') != null;
 }
 
 function setModel() {
