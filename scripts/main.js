@@ -16,24 +16,49 @@ function captureChanges() {
   $('options').onchange = updateUrl
 }
 
+function deselectUnavailableOptions() {
+  const allSelects = Array.from(document.getElementsByTagName('option'))
+  allSelects.reverse()
+  for (var i = 0; i < allSelects.length; i++) {
+    const select = allSelects[i];
+    if (select.selected && isUnavailable(select)) {
+      select.selected = false;
+    }
+  }
+}
+
+function isUnavailable(element) {
+  return [element, element.parentNode, element.parentNode.parentNode].find(p => p.style.display === 'none') != null;
+}
+
 function setModel() {
   setVisibility(document.getElementsByClassName('m3'), false);
   setVisibility(document.getElementsByClassName('ms'), false);
-  setVisibility(document.getElementsByClassName(model.value), true);
+  setVisibility(document.getElementsByClassName('ms-2012'), false);
+  setVisibility(document.getElementsByClassName('ms-2016'), false);
 
-  switch(model.value) {
+  switch (model.value) {
     case 'm3': {
+      setVisibility(document.getElementsByClassName('m3'), true);
       $('paint').value = 'PPSB';
       if ($('background').value === '0') {
         $('background').value = 1;
       };
       break;
     }
-    case 'ms': {
-      $('paint').value = 'COL2-PPSB,MI01';
+    case 'ms-2012': {
+      setVisibility(document.getElementsByClassName('ms'), true);
+      setVisibility(document.getElementsByClassName('ms-2012'), true);
+      break;
+    }
+    case 'ms-2016': {
+      setVisibility(document.getElementsByClassName('ms'), true);
+      setVisibility(document.getElementsByClassName('ms-2016'), true);
       break;
     }
   }
+
+  deselectUnavailableOptions()
 }
 
 function setVisibility(elements, visible) {
@@ -69,11 +94,12 @@ function setAttributes(elements, attr, value) {
 
 function buildParts() {
   const parts = {
-    "model": model.value,
+    "model": model.value.split('-')[0],
     "size": 2048,
     "options": buildOptions()
   }
   parts.bkba_opt = $('background').value
+  if ($('model').value === 'ms-2016') parts.options += ',MI01'
   if ($('rearspoiler').checked) parts.options += ',X019'
   return parts
 }
