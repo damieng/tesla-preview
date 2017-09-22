@@ -118,5 +118,5 @@ function buildUrl(parts, extras) {
 }
 
 function buildOptions() {
-  return optionIds.map(id => $(id).value).filter(v => v != null && v != '')
+  return optionIds.map(id => $(id)).filter(e => !isUnavailable(e)).map(e => e.value).filter(v => v != null && v != '')
 }
