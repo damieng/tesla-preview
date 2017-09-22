@@ -18,18 +18,25 @@ function captureChanges() {
 }
 
 function deselectUnavailableOptions() {
-  const allSelects = Array.from(document.getElementsByTagName('option'))
-  allSelects.reverse()
+  const allSelects = document.getElementsByTagName('select')
   for (var i = 0; i < allSelects.length; i++) {
     const select = allSelects[i];
-    if (select.selected && isUnavailable(select)) {
-      select.selected = false;
+    if (select.selectedIndex >= 0) {
+      const selected = select.options[select.selectedIndex];
+      if (isUnavailable(selected)) {
+        for (var j = 0; j < select.options.length; j++) {
+          if (!isUnavailable(select.options[j])) {
+            select.selectedIndex = j;
+            break;
+          }
+        }
+      }
     }
   }
 }
 
 function isUnavailable(element) {
-  return [element, element.parentNode, element.parentNode.parentNode, element.parentNode.parentNode.parentNode].find(p => p.style.display === 'none') != null;
+  return [element, element.parentNode, element.parentNode.parentNode, element.parentNode.parentNode].find(p => p.style.display === 'none') != null;
 }
 
 function setModel() {
