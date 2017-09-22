@@ -1,17 +1,18 @@
 body {
-	font-family: "Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: 'Roboto', 'Helvetica Neue Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   height: 100vh;
 	margin: 0;
 	padding: 0;
 }
 
 form {
-	margin: 2px;
+	margin: 2px 0.5em;
+	border-bottom: 1px solid #fff;
 }
 
 fieldset {
 	border: 0;
-	border-top: 1px solid #ccc;
+	border-top: 2px solid #c00;
 	display: inline-block;
 	padding-left: 0;
 	padding-right: 0;
@@ -25,13 +26,21 @@ label {
 }
 
 select {
-	margin: 1px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-bottom: 2px solid #ccc;
+	font-family: 'Roboto', 'Helvetica Neue Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 legend {
+	color: #0;
+	font-weight: bold;
 	padding-left: 0;
 	padding-right: 0.5em;
-	font-weight: bold;
 }
 
 #seats {
@@ -40,4 +49,17 @@ legend {
 
 #single {
 	width: 100%
+}
+
+.checkerboard {
+  background: -webkit-linear-gradient(45deg, rgba(0,0,0,0.0980392) 25%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.0980392) 75%, rgba(0,0,0,0.0980392) 0), -webkit-linear-gradient(45deg, rgba(0,0,0,0.0980392) 25%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.0980392) 75%, rgba(0,0,0,0.0980392) 0), rgb(255, 255, 255);
+  background: -moz-linear-gradient(45deg, rgba(0,0,0,0.0980392) 25%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.0980392) 75%, rgba(0,0,0,0.0980392) 0), -moz-linear-gradient(45deg, rgba(0,0,0,0.0980392) 25%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.0980392) 75%, rgba(0,0,0,0.0980392) 0), rgb(255, 255, 255);
+  background: linear-gradient(45deg, rgba(0,0,0,0.0980392) 25%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.0980392) 75%, rgba(0,0,0,0.0980392) 0), linear-gradient(45deg, rgba(0,0,0,0.0980392) 25%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.0980392) 75%, rgba(0,0,0,0.0980392) 0), rgb(255, 255, 255);
+  background-position: 0 0, 20px 20px;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 40px 40px;
+  background-size: 40px 40px;
 }

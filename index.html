@@ -4,7 +4,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Tesla Preview</title>
-		<link rel="stylesheet" href="styles/main.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+		<link href="styles/main.css" rel="stylesheet" >
 	</head>
 	<body>
 		<main class="wrapper">
@@ -205,7 +206,11 @@
 						<option class="ms-2012 mx m3" value="STUD_SEAT">Seating</option>
 					</optgroup>
 				</select>
-				<select id="background">
+				<select class="m3" id="background-m3">
+					<option value="0">Studio</option>
+					<option selected="selected" value="1">Transparent</option>
+				</select>
+				<select class="ms mx" id="background">
 					<option value="0">Showroom</option>
 					<option selected="selected" value="1">Transparent</option>
 					<option value="2">White</option>
@@ -214,7 +219,7 @@
 			</fieldset>
 		</form>
 		<section id="visual">
-			<img id="single" />
+			<img id="single"  class="checkerboard" />
 		</section>
 		<footer>
 			<p id="debug" />

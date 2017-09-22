@@ -73,6 +73,12 @@ function setModel() {
   deselectUnavailableOptions()
 }
 
+function setBackgroundOptions() {
+  // Model 3
+  // All - Showroom unavailable
+  // Seat -
+}
+
 function setVisibility(elements, visible) {
   if (visible)
     for (var i = 0; i < elements.length; i++)
@@ -113,8 +119,8 @@ function buildParts() {
     "options": buildOptions()
   }
 
-  parts.bkba_opt = $('background').value
-  if ($('model').value === 'ms-2016') parts.options.push('MI01')
+  parts.bkba_opt = model.value === 'm3' ?  $('background-m3').value : $('background').value
+  if (model.value === 'ms-2016') parts.options.push('MI01')
   if ($('rearspoiler').checked) parts.options.push('X019')
   return parts
 }
