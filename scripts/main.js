@@ -1,6 +1,6 @@
 'use strict';
 
-const optionIds = [ 'paint', 'wheels', 'roof', 'seats', 'seating', 'decor', 'headliner', 'brakes' ]
+const optionIds = [ 'paint', 'wheels', 'roof', 'seats', 'seating', 'console', 'decor', 'headliner', 'brakes' ]
 function $(id) {return document.getElementById(id) }
 const allImages = $('visual').getElementsByTagName('img')
 const single = $('single')
