@@ -9,8 +9,7 @@ const view = $('view')
 const ms2012showroomOnly = ['STUD_ABOV', 'STUD_SEAT_DRIVER', 'STUD_SEAT_3QTR', 'OUT1_3QTR', 'STUD_SEAT']
 const ms2012notTransparent = ['STUD_3QTR', 'STUD_REAR', 'STUD_SEAT_ABOVE']
 
-setAttributes(allImages, 'onload', "this.style.opacity = 1")
-
+setAttributes(allImages, 'onload', "this.classList.remove('loading')")
 captureChanges()
 setModel()
 setBackgroundOptions()
@@ -120,15 +119,19 @@ function setVisibility(elements, visible) {
 }
 
 function updateUrl() {
-  setAttributes(allImages, 'style', 'opacity:0.5')
+  Array.from(allImages).forEach(i => i.classList.add('loading'))
   const parts = buildParts()
   switch (view.value) {
     default: {
       single.hidden = false
-      single.src = buildUrl(parts, { "view": view.value, "size": single.width })
+      single.src = buildUrl(parts, { "view": view.value, "size": getWidth(single) })
       single.title = parts.options.join(',')
     }
   }
+}
+
+function getWidth(element) {
+  return element.width === 0 ? window.innerWidth : element.width
 }
 
 function setAttributes(elements, attr, value) {

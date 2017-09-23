@@ -73,3 +73,7 @@ legend {
   -webkit-background-size: 40px 40px;
   background-size: 40px 40px;
 }
+
+.loading {
+	opacity: 0.5;
+}
