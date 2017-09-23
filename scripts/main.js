@@ -1,7 +1,7 @@
 'use strict'
 
-const optionIds = [ 'paint', 'wheels', 'roof', 'drive', 'seats', 'seating', 'console', 'decor', 'headliner', 'brakes' ]
-function $(id) {return document.getElementById(id) }
+const optionIds = ['paint', 'wheels', 'roof', 'drive', 'seats', 'seating', 'console', 'decor', 'headliner', 'brakes']
+function $(id) { return document.getElementById(id) }
 const allImages = $('visual').getElementsByTagName('img')
 const single = $('single')
 const model = $('model')
@@ -18,8 +18,9 @@ updateUrl()
 
 function captureChanges() {
   model.onchange = () => { setModel(); setBackgroundOptions(); }
+  view.onchange = setBackgroundOptions
+  window.onresize = updateUrl
   $('options').onchange = updateUrl
-  $('view').onchange = setBackgroundOptions
 }
 
 function deselectUnavailableOptions() {
@@ -120,21 +121,14 @@ function setVisibility(elements, visible) {
 
 function updateUrl() {
   setAttributes(allImages, 'style', 'opacity:0.5')
-  const view = $('view').value
   const parts = buildParts()
-  switch (view) {
+  switch (view.value) {
     default: {
       single.hidden = false
-      single.src = buildUrl(parts, { "view": view })
+      single.src = buildUrl(parts, { "view": view.value, "size": single.width })
       single.title = parts.options.join(',')
     }
   }
-}
-
-function setImageSources(container, url) {
-  const elements = container.getElementsByTagName('img')
-  for (var i = 0; i < elements.length; i++)
-    elements[i].setAttribute('src', url + elements[i].getAttribute('data-suffix'))
 }
 
 function setAttributes(elements, attr, value) {
@@ -145,7 +139,6 @@ function setAttributes(elements, attr, value) {
 function buildParts() {
   const parts = {
     "model": model.value.split('-')[0],
-    "size": 2048,
     "options": buildOptions()
   }
 
