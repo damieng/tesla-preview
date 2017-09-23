@@ -76,8 +76,12 @@ function setModel() {
 }
 
 function setBackgroundOptions() {
-  setVisibility(background, model.value !== 'm3')
+  setVisibility([background], model.value !== 'm3')
   setVisibility(background.options, true)
+  if (view.value === 'STUD_SEAT' || view.value === 'STUD_SEAT_ALTA') {
+    setVisibility([background], false)
+  }
+
   switch (model.value) {
     case 'ms-2012': return setBackgroundOptionsForMs2012()
     case 'ms-2016': return setBackgroundOptionsForMs2016()

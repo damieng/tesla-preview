@@ -1,4 +1,6 @@
 body {
+	background-color: #eee;
+	color: #111;
 	font-family: Roboto, sans-serif;
 	font-size: 90%;
   height: 100vh;
@@ -27,12 +29,16 @@ label {
 	white-space: nowrap;
 }
 
+#spoiler {
+	color: #111;
+}
+
 select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	margin: 0;
-	padding: 0;
+	padding: 0 0.5em;
 	border: none;
 	border-bottom: 2px solid #ccc;
 	font-family: Roboto, sans-serif;

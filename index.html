@@ -23,6 +23,32 @@
 				</select>
 			</fieldset>
 			<fieldset>
+				<legend>Render</legend>
+				<select id="view">
+						<option class="ms" value="STUD_ABOV">Rear above</option>
+						<option value="STUD_3QTR">Front angled</option>
+						<option class="ms mx" value="STUD_REAR">Rear angled</option>
+						<option selected="selected" value="STUD_SIDE">Side profile</option>
+						<option class="ms mx" value="STUD_SEAT_ABOVE">Seating above</option>
+						<option class="ms-2012" value="STUD_SEAT_DRIVER">Drivers seat</option>
+						<option class="ms-2012" value="STUD_SEAT_3QTR">Passenger seat</option>
+						<option class="ms" value="STUD_SEAT_ALTA">Seating angled</option>
+						<option class="ms-2012" value="OUT1_3QTR">Outside 3D</option>
+						<option class="ms-2012 mx m3" value="STUD_SEAT">Seating side</option>
+					</optgroup>
+				</select>
+				<select class="m3" id="background-m3">
+					<option value="0">Studio</option>
+					<option selected="selected" value="1">Transparent</option>
+				</select>
+				<select class="ms mx" id="background">
+					<option value="0">Showroom</option>
+					<option selected="selected" value="1">Transparent</option>
+					<option value="2">White</option>
+					<option value="3">Gray</option>
+				</select>
+			</fieldset>
+			<fieldset>
 				<legend>Exterior</legend>
 				<label>Paint
 					<select id="paint">
@@ -97,7 +123,7 @@
 						<option value="BC0R">Red</option>
 					</select>
 				</label>
-				<label class="ms"><input id="rearspoiler" type="checkbox"/>Rear Spoiler</label>
+				<label id="spoiler" class="ms"><input id="rearspoiler" type="checkbox"/>Rear Spoiler</label>
 			</fieldset>
 			<fieldset class="ms mx">
 				<legend>Interior</legend>
@@ -138,11 +164,12 @@
 							<option value="QTPC">Cream</option>
 							<option value="QTPW">White</option>
 						</optgroup>
-						<optgroup class="mx" label="Extended Leather">
+						<optgroup class="mx" label="Leather Ventilated">
+							<option value="QLEB">Black</option>
 							<option value="QLET">Tan</option>
 							<option value="QLEW">White</option>
 						</optgroup>
-						<optgroup class="mx" label="Premium Leather">
+						<optgroup class="mx ms" label="Premium Leather">
 							<option value="QLPB">Black</option>
 							<option value="QLPC">Cream</option>
 							<option value="QLPT">Tan</option>
@@ -165,7 +192,7 @@
 				</label>
 				<label class="ms mx">Headliner
 					<select id="headliner">
-						<option value="UTMF">Fabric</option>
+						<option class="ms" value="UTMF">Textile</option>
 						<option class="mx" value="UTPB">Black Plastic</option>
 						<option value="UTAB">Black Alcantara</option>
 						<option value="UTAW">White Alcantara</option>
@@ -190,32 +217,6 @@
 						<option value="YFFC">Integrated</option>
 					</select>
 				</label>
-			</fieldset>
-			<fieldset>
-				<legend>Render</legend>
-				<select id="view">
-						<option class="ms" value="STUD_ABOV">Rear above</option>
-						<option value="STUD_3QTR">Front angled</option>
-						<option class="ms mx" value="STUD_REAR">Rear angled</option>
-						<option selected="selected" value="STUD_SIDE">Side profile</option>
-						<option class="ms mx" value="STUD_SEAT_ABOVE">Seating above</option>
-						<option class="ms-2012" value="STUD_SEAT_DRIVER">Drivers seat</option>
-						<option class="ms-2012" value="STUD_SEAT_3QTR">Passenger seat</option>
-						<option class="ms" value="STUD_SEAT_ALTA">Seating angled</option>
-						<option class="ms-2012" value="OUT1_3QTR">Outside 3D</option>
-						<option class="ms-2012 mx m3" value="STUD_SEAT">Seating side</option>
-					</optgroup>
-				</select>
-				<select class="m3" id="background-m3">
-					<option value="0">Studio</option>
-					<option selected="selected" value="1">Transparent</option>
-				</select>
-				<select class="ms mx" id="background">
-					<option value="0">Showroom</option>
-					<option selected="selected" value="1">Transparent</option>
-					<option value="2">White</option>
-					<option value="3">Gray</option>
-				</select>
 			</fieldset>
 		</form>
 		<section id="visual">
