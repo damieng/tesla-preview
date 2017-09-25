@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Tesla Preview</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+		<link href="styles/main.css" rel="stylesheet" >
+	</head>
+	<body>
+		<form id="options">
+			<fieldset>
+				<legend>Model</legend>
+				<select id="model">
+					<option value="m3">3</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<legend>Render</legend>
+				<select id="view">
+						<option value="ANDROID_FRONT">Front angled</option>
+						<option value="ANDROID_REAR">Rear angled</option>
+						<option value="ANDROID_FRONT_SIDE">Front side</option>
+					</optgroup>
+				</select>
+				<select id="background">
+					<option value="0">Studio</option>
+					<option value="1">Transparent</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<legend>Exterior</legend>
+				<label>Paint
+					<select id="paint">
+						<optgroup label="Solid">
+							<option class="m3" value="PBSB">Black</option>
+						</optgroup>
+						<optgroup label="Metallic">
+							<option class="m3" value="PPSB">Deep Blue</option>
+							<option class="m3" value="PMNG">Midnight Silver</option>
+							<option class="m3" value="PMSS">Starlight Silver</option>
+						</optgroup>
+						<optgroup label="Multi-Coat">
+							<option class="m3" value="PPSW">Pearl White</option>
+							<option class="m3" value="PPMR">Red</option>
+						</optgroup>
+					</select>
+				</label>
+				<label>Wheels
+					<select id="wheels">
+						<option class="m3" value="W38B">18″ Aero</option>
+						<option class="m3" value="W39B">19″ Sport</option>
+					</select>
+				</label>
+			</fieldset>
+		</form>
+		<section id="visual">
+			<section class="m3">
+				<section class="front angle layered">
+					<img class="body" src="android/generated_images_colorized_model_3_m3herofrontbody.png" />
+					<div class="wheels">
+						<img class="aero" src="android/generated_images_static_model_3_m3herofrontwheelspinwheel18.png" />
+						<img class="sport" src="android/generated_images_static_model_3_m3herofrontwheelsstiletto19.png" />
+					</div>
+					<div class="front door left">
+						<img src="android/generated_images_colorized_model_3_m3herofrontfrontleftdoorclosed.png" class="closed" />
+						<img src="android/generated_images_colorized_model_3_m3herofrontfrontleftdooropen.png" class="open" />
+					</div>
+					<div class="rear door left">
+						<img src="android/generated_images_colorized_model_3_m3herofrontrearleftdoorclosed.png" class="closed" />
+						<img src="android/generated_images_colorized_model_3_m3herofrontrearleftdooropen.png" class="open" />
+					</div>
+					<div class="hood">
+						<img src="android/generated_images_colorized_model_3_m3herofronthoodclosed.png" class="closed" />
+						<img src="android/generated_images_colorized_model_3_m3herofronthoodopen.png" class="open" />
+					</div>
+					<div class="trunk">
+						<img src="android/generated_images_colorized_model_3_m3herofronttrunkclosed.png" class="closed" />
+						<img src="android/generated_images_colorized_model_3_m3herofronttrunkopen.png" class="open" />
+					</div>
+				</section>
+				<section class="rear angle layered">
+					<img class="body" src="android/generated_images_colorized_model_3_m3heroreversebody.png" />
+					<div class="wheels">
+						<img class="aero" src="android/generated_images_static_model_3_m3heroreversewheelspinwheel18.png" />
+						<img class="sport" src="android/generated_images_static_model_3_m3heroreversewheelsstiletto19.png" />
+					</div>
+					<div class="front door left">
+						<img src="android/generated_images_colorized_model_3_m3heroreversefrontleftdoorclosed.png" class="closed" />
+						<img src="android/generated_images_colorized_model_3_m3heroreversefrontleftdooropen.png" class="open" />
+					</div>
+					<div class="rear door left">
+						<img src="android/generated_images_colorized_model_3_m3heroreverserearleftdoorclosed.png" class="closed" />
+						<img src="android/generated_images_colorized_model_3_m3heroreverserearleftdooropen.png" class="open" />
+					</div>
+					<div class="hood">
+						<img src="android/generated_images_colorized_model_3_m3heroreversehoodclosed.png" class="closed" />
+						<img src="android/generated_images_colorized_model_3_m3heroreversehoodopen.png" class="open" />
+					</div>
+					<div class="trunk">
+						<img src="android/generated_images_colorized_model_3_m3heroreversetrunkclosed.png" class="closed" />
+						<img src="android/generated_images_colorized_model_3_m3heroreversetrunkopen.png" class="open" />
+					</div>
+				</section>
+				<section class="front side layered">
+					<img class="body" src="android/generated_images_colorized_model_3_m3sidebody.png" />
+					<div class="wheels">
+						<img class="aero" src="android/generated_images_static_model_3_m3sidewheelspinwheel18.png" />
+						<img class="sport" src="android/generated_images_static_model_3_m3sidewheelsstiletto19.png" />
+					</div>
+				</section>
+		</section>
+		<script>
+function $(id) { return document.getElementById(id) }
+const view = $('view')
+
+androidSetup()
+
+function androidSetup() {
+	wireUpOpenClose()
+	applyChanges()
+	$('options').onchange = applyChanges
+}
+
+function applyChanges() {
+	const viewValue = $('view').value
+	setVisibility(document.querySelectorAll('.m3 > .front.angle'), viewValue === 'ANDROID_FRONT')
+	setVisibility(document.querySelectorAll('.m3 > .rear.angle'), viewValue === 'ANDROID_REAR')
+	setVisibility(document.querySelectorAll('.m3 > .front.side'), viewValue === 'ANDROID_FRONT_SIDE')
+
+	const wheelsValue = $('wheels').value
+	setVisibility(document.querySelectorAll('.m3 .wheels > img.aero'), wheelsValue === 'W38B')
+	setVisibility(document.querySelectorAll('.m3 .wheels > img.sport'), wheelsValue === 'W39B')
+}
+
+function wireUpOpenClose() {
+  const allToggleable = document.querySelectorAll('.open, .closed')
+  setAttributes(allToggleable, 'onclick', 'toggleOpenClose(this)')
+  const allOpen = document.querySelectorAll('.open')
+  setVisibility(allOpen, false)
+}
+
+function toggleOpenClose(element) {
+  const isOpen = element.classList.contains('open')
+  const classToDisplay = isOpen ? 'closed' : 'open'
+  const siblings = element.parentNode.children
+  for (var i = 0; i < siblings.length; i++) {
+    setVisibility([siblings[i]], siblings[i].classList.contains(classToDisplay))
+  }
+}
+
+function setVisibility(elements, visible) {
+  if (visible)
+    for (var i = 0; i < elements.length; i++)
+      elements[i].style.display = ''
+    else
+      for (var i = 0; i < elements.length; i++)
+        elements[i].style.display = 'none'
+}
+
+
+function setAttributes(elements, attr, value) {
+  for (var i = 0; i < elements.length; i++)
+    elements[i].setAttribute(attr, value)
+}
+		</script>
+	</body>
+</html>
