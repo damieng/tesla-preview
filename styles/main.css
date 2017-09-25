@@ -97,8 +97,9 @@ img[onclick] {
 	left: 0
 }
 
-.front.angle > .front.door > img { z-index: 200; }
-.front.angle > .rear.door > img { z-index: 100; }
+.front.angle > .front.door.right > img { z-index: 40; }
+.front.angle > .front.door.left > img { z-index: 200; }
+.front.angle > .rear.door.left > img { z-index: 100; }
 .front.angle > .trunk > img { z-index: 40; }
 .front.angle > .hood > img { z-index: 55; }
 .front.angle > img.body { z-index: 50; }
@@ -111,32 +112,43 @@ img[onclick] {
 .m3 > .front.angle > .front.door.left > img.closed { top: 14px;	left: 306px; }
 .m3 > .front.angle > .front.door.left > img.open { top: 6px; left: 295px; }
 .m3 > .front.angle > .front.door.right > img.open { top: 9px;	left: 110px; }
+.m3 > .front.angle > .front.door.right > img.closed { top: 24px; left: 165px; }
 .m3 > .front.angle > .rear.door.left > img.closed { top: 13px; left: 428px; }
 .m3 > .front.angle > .rear.door.left > img.open { top: 12px; left: 390px; }
+.m3 > .front.angle > .rear.door.right > img.closed { top: 19px; left: 288px; }
+.m3 > .front.angle > .rear.door.right > img.open { top: 12px; left: 390px; }
 .m3 > .front.angle > .hood > img.open { top: -28px;	left: 20px; }
 .m3 > .front.angle > .hood > img.closed { top: 74px; left: 19px; }
 .m3 > .front.angle > .trunk > img.open { top: -50px; left: 400px; }
 .m3 > .front.angle > .trunk > img.closed { top: 28px;	left: 512px; z-index: 200 }
 
-.rear.angle > .front.door > img { z-index: 100; }
-.rear.angle > .rear.door > img { z-index: 200; }
+.rear.angle > .front.door.left > img { z-index: 100; }
+.rear.angle > .front.door.right > img { z-index: 45; }
+.rear.angle > .rear.door.left > img { z-index: 200; }
+.rear.angle > .rear.door.right > img { z-index: 48; }
 .rear.angle > .trunk > img { z-index: 200; }
 .rear.angle > .hood > img { z-index: 55; }
 .rear.angle > img.body { z-index: 50; }
 .rear.angle > .wheels > img { z-index: 55; }
-.rear.angle > .chargeport > img { z-index: 300; }
+.rear.angle > .chargeport img { z-index: 300; }
 
 .m3 > .rear.angle > .shadow { top: 118px; left: -67px; }
 .m3 > .rear.angle > .wheels > img { top: 94px; left: 10px; }
 .m3 > .rear.angle > .front.door.left > img.closed { top: 17px; left: 85px; }
-.m3 > .rear.angle > .front.door.left > img.open { top: 10px; left: 0px; }
+.m3 > .rear.angle > .front.door.left > img.open { top: 11px; left: -8px; }
+.m3 > .rear.angle > .front.door.right > img.closed { top: 26px; left: 243px; }
+.m3 > .rear.angle > .front.door.right > img.open { top: 1px; left: 243px; }
 .m3 > .rear.angle > .rear.door.left > img.closed { top: 17px;	left: 201px; }
 .m3 > .rear.angle > .rear.door.left > img.open { top: 20px;	left: 160px; }
+.m3 > .rear.angle > .rear.door.right > img.closed { top: 18px; left: 352px; }
+.m3 > .rear.angle > .rear.door.right > img.open { top: 9px; left: 356px; }
 .m3 > .rear.angle > .hood > img.open { top: -26px; left: 46px; }
 .m3 > .rear.angle > .hood > img.closed { top: 60px; left: 80px; }
 .m3 > .rear.angle > .trunk > img.open { top: -65px; left: 418px; }
 .m3 > .rear.angle > .trunk > img.closed { top: 34px; left: 400px; }
-.m3 > .rear.angle > .chargeport > img.open { top: 67px; left: 427px; }
+.m3 > .rear.angle > .chargeport > .open > img.port { top: 67px; left: 427px; }
+.m3 > .rear.angle > .chargeport > .open > img.plug { top: 84px; left: 423px; }
+.m3 > .rear.angle > .chargeport > .open > img.cable { top: 103px; left: 403px; z-index: 310 }
 .m3 > .rear.angle > .chargeport > img.closed { top: 90px; left: 425px; }
 
 .m3 > .front.side > .wheels > img { top: 85px; left: 46px; }

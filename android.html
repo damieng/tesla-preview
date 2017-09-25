@@ -53,6 +53,19 @@
 					</select>
 				</label>
 			</fieldset>
+			<fieldset>
+				<legend>Open Doors</legend>
+				<label><input type="checkbox" onchange="setVisibilityBySelector('.front.left', this.checked)">Front Left</label>
+				<label><input type="checkbox" onchange="setVisibilityBySelector('.front.right', this.checked)">Front Right</label>
+				<label><input type="checkbox" onchange="setVisibilityBySelector('.rear.left', this.checked)">Rear Left</label>
+				<label><input type="checkbox" onchange="setVisibilityBySelector('.rear.right', this.checked)">Rear Right</label>
+			</fieldset>
+			<fieldset>
+				<legend>Open</legend>
+				<label><input type="checkbox" onchange="setVisibilityBySelector('.hood', this.checked)">Hood</label>
+				<label><input type="checkbox" onchange="setVisibilityBySelector('.trunk', this.checked)">Trunk</label>
+				<label><input type="checkbox" onchange="setVisibilityBySelector('.chargeport', this.checked)">Charge Port</label>
+			</fieldset>
 		</form>
 		<section id="visual">
 			<section class="m3">
@@ -67,9 +80,17 @@
 						<img src="android/generated_images_colorized_model_3_m3herofrontfrontleftdoorclosed.png" class="closed" />
 						<img src="android/generated_images_colorized_model_3_m3herofrontfrontleftdooropen.png" class="open" />
 					</div>
+					<div class="front door right">
+						<img src="android/generated_images_static_model_3_m3herofrontfrontrightdoorclosed.png" class="closed" />
+						<img src="android/generated_images_colorized_model_3_m3herofrontfrontrightdooropen.png" class="open" />
+					</div>
 					<div class="rear door left">
 						<img src="android/generated_images_colorized_model_3_m3herofrontrearleftdoorclosed.png" class="closed" />
 						<img src="android/generated_images_colorized_model_3_m3herofrontrearleftdooropen.png" class="open" />
+					</div>
+					<div class="rear door right">
+						<img src="android/generated_images_static_model_3_m3herofrontrearrightdoorclosed.png" class="closed" />
+						<img src="android/generated_images_colorized_model_3_m3herofrontrearrightdooropen.png" class="open" />
 					</div>
 					<div class="hood">
 						<img src="android/generated_images_colorized_model_3_m3herofronthoodclosed.png" class="closed" />
@@ -91,9 +112,17 @@
 						<img src="android/generated_images_colorized_model_3_m3heroreversefrontleftdoorclosed.png" class="closed" />
 						<img src="android/generated_images_colorized_model_3_m3heroreversefrontleftdooropen.png" class="open" />
 					</div>
+					<div class="front door right">
+						<img src="android/generated_images_static_model_3_m3heroreversefrontrightdoorclosed.png" class="closed" />
+						<img src="android/generated_images_static_model_3_m3heroreversefrontrightdooropen.png" class="open" />
+					</div>
 					<div class="rear door left">
 						<img src="android/generated_images_colorized_model_3_m3heroreverserearleftdoorclosed.png" class="closed" />
 						<img src="android/generated_images_colorized_model_3_m3heroreverserearleftdooropen.png" class="open" />
+					</div>
+					<div class="rear door right">
+						<img src="android/generated_images_static_model_3_m3heroreverserearrightdoorclosed.png" class="closed" />
+						<img src="android/generated_images_static_model_3_m3heroreverserearrightdooropen.png" class="open" />
 					</div>
 					<div class="hood">
 						<img src="android/generated_images_colorized_model_3_m3heroreversehoodclosed.png" class="closed" />
@@ -101,7 +130,11 @@
 					</div>
 					<div class="chargeport">
 						<img src="android/generated_images_static_model_3_m3heroreversechargeportclosed.png" class="closed" />
-						<img src="android/generated_images_static_model_3_m3heroreversechargeportopen.png" class="open" />
+						<div class="open">
+							<img src="android/generated_images_static_model_3_m3heroreversechargeportopen.png" class="port" />
+							<img src="android/generated_images_static_model_3_m3heroreversechargecable.png" class="cable" />
+							<img src="android/generated_images_static_model_3_m3heroreversechargeplugcharging.png" class="plug charging" />
+						</div>
 					</div>
 					<div class="trunk">
 						<img src="android/generated_images_colorized_model_3_m3heroreversetrunkclosed.png" class="closed" />
@@ -118,8 +151,6 @@
 		</section>
 		<script>
 function $(id) { return document.getElementById(id) }
-const view = $('view')
-
 androidSetup()
 
 function androidSetup() {
@@ -164,6 +195,10 @@ function setVisibility(elements, visible) {
         elements[i].style.display = 'none'
 }
 
+function setVisibilityBySelector(className, open) {
+	setVisibility(document.querySelectorAll(className + ' .open'), open)
+		setVisibility(document.querySelectorAll(className + ' .closed'), !open)
+}
 
 function setAttributes(elements, attr, value) {
   for (var i = 0; i < elements.length; i++)
