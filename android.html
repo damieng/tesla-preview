@@ -173,6 +173,7 @@ function applyChanges() {
 function wireUpOpenClose() {
   const allToggleable = document.querySelectorAll('.open, .closed')
   setAttributes(allToggleable, 'onclick', 'toggleOpenClose(this)')
+	setAttributes(allToggleable, 'draggable', 'false')
   const allOpen = document.querySelectorAll('.open')
   setVisibility(allOpen, false)
 }
