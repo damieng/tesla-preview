@@ -110,12 +110,11 @@ function setBackgroundOptionsForMs2016() {
 }
 
 function setVisibility(elements, visible) {
-  if (visible)
-    for (var i = 0; i < elements.length; i++)
-      elements[i].style.display = ''
-    else
-      for (var i = 0; i < elements.length; i++)
-        elements[i].style.display = 'none'
+  for (var i = 0; i < elements.length; i++) {
+    const element = elements[i]
+    element.style.display = visible ? '' : 'none'
+    element.disabled = visible ? '' : 'disabled'
+  }
 }
 
 function updateUrl() {
