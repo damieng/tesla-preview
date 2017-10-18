@@ -1,11 +1,15 @@
 'use strict'
 
+const byId = id => document.getElementById(id)
+const byTag = tag => document.getElementsByTagName(tag)
+const byClass = className => document.getElementsByClassName(className)
+
 const optionIds = ['paint', 'wheels', 'roof', 'drive', 'seats', 'seating', 'console', 'decor', 'headliner', 'brakes', 'rd-seat-type', 'rd-seat-color', 'rd-accent-color']
-function $(id) { return document.getElementById(id) }
-const allImages = $('visual').getElementsByTagName('img')
-const single = $('single')
-const model = $('model')
-const view = $('view')
+
+const allImages = byId('visual').getElementsByTagName('img')
+const single = byId('single')
+const model = byId('model')
+const view = byId('view')
 const ms2012showroomOnly = ['STUD_ABOV', 'STUD_SEAT_DRIVER', 'STUD_SEAT_3QTR', 'OUT1_3QTR', 'STUD_SEAT']
 const ms2012notTransparent = ['STUD_3QTR', 'STUD_REAR', 'STUD_SEAT_ABOVE']
 
@@ -19,21 +23,21 @@ function captureChanges() {
   model.onchange = () => { setModel(); setBackgroundOptions(); }
   view.onchange = setBackgroundOptions
   window.onresize = updateUrl
-  $('options').onchange = optionsChanged
+  byId('options').onchange = optionsChanged
 }
 
 function optionsChanged() {
   switch (model.value) {
     case 'rd': {
-      console.log($('rd-seat-type').value)
-      setVisibility([$('rd-accent')], !(['INT2', 'INT4'].includes($('rd-seat-type').value)))
+      setVisibility([byId('rd-accent')], !(['INT2', 'INT4'].includes(byId('rd-seat-type').value)))
+      break;
     }
   }
   updateUrl()
 }
 
 function deselectUnavailableOptions() {
-  const allSelects = document.getElementsByTagName('select')
+  const allSelects = byTag('select')
   for (var i = 0; i < allSelects.length; i++) {
     const select = allSelects[i]
     if (select.selectedIndex >= 0) {
@@ -55,34 +59,34 @@ function isUnavailable(element) {
 }
 
 function setModel() {
-  setVisibility(document.getElementsByClassName('m3'), false)
-  setVisibility(document.getElementsByClassName('rd'), false)
-  setVisibility(document.getElementsByClassName('ms'), false)
-  setVisibility(document.getElementsByClassName('mx'), false)
-  setVisibility(document.getElementsByClassName('ms-2012'), false)
-  setVisibility(document.getElementsByClassName('ms-2016'), false)
+  setVisibility(byClass('m3'), false)
+  setVisibility(byClass('rd'), false)
+  setVisibility(byClass('ms'), false)
+  setVisibility(byClass('mx'), false)
+  setVisibility(byClass('ms-2012'), false)
+  setVisibility(byClass('ms-2016'), false)
 
   switch (model.value) {
     case 'm3': {
-      setVisibility(document.getElementsByClassName('m3'), true)
+      setVisibility(byClass('m3'), true)
       break
     }
     case 'rd': {
-      setVisibility(document.getElementsByClassName('rd'), true)
+      setVisibility(byClass('rd'), true)
       break
     }
     case 'ms-2012': {
-      setVisibility(document.getElementsByClassName('ms'), true)
-      setVisibility(document.getElementsByClassName('ms-2012'), true)
+      setVisibility(byClass('ms'), true)
+      setVisibility(byClass('ms-2012'), true)
       break
     }
     case 'ms-2016': {
-      setVisibility(document.getElementsByClassName('ms'), true)
-      setVisibility(document.getElementsByClassName('ms-2016'), true)
+      setVisibility(byClass('ms'), true)
+      setVisibility(byClass('ms-2016'), true)
       break
     }
     case 'mx': {
-      setVisibility(document.getElementsByClassName('mx'), true)
+      setVisibility(byClass('mx'), true)
       break
     }
   }
@@ -160,7 +164,7 @@ function buildParts() {
   }
 
   if (model.value === 'm3') {
-    parts.bkba_opt = $('background-m3').value
+    parts.bkba_opt = byId('background-m3').value
   } else {
     if (!isUnavailable(background.options[background.selectedIndex]))
       parts.bkba_opt = background.value
@@ -168,15 +172,15 @@ function buildParts() {
 
   if (model.value === 'rd') {
     parts.options.push([
-      $('rd-seat-type').value,
-      $('rd-seat-color').value,
-      $('rd-accent-color').value
+      byId('rd-seat-type').value,
+      byId('rd-seat-color').value,
+      byId('rd-accent-color').value
     ].join('.'))
   }
 
   if (model.value === 'ms-2016') parts.options.push('MI01')
-  if ($('rearspoiler').checked) parts.options.push('X019')
-  if ($('carbonkit').checked) parts.options.push('EXT1')
+  if (byId('rearspoiler').checked) parts.options.push('X019')
+  if (byId('carbonkit').checked) parts.options.push('EXT1')
   return parts
 }
 
@@ -188,5 +192,5 @@ function buildUrl(parts, extras) {
 }
 
 function buildOptions() {
-  return optionIds.filter(id => !id.includes('-')).map(id => $(id)).filter(e => !isUnavailable(e)).map(e => e.value).filter(v => v != null && v != '')
+  return optionIds.filter(id => !id.includes('-')).map(id => byId(id)).filter(e => !isUnavailable(e)).map(e => e.value).filter(v => v != null && v != '')
 }
