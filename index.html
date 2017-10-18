@@ -37,7 +37,7 @@
 						<option class="ms-2012" value="STUD_SEAT_3QTR">Passenger seat</option>
 						<option class="ms" value="STUD_SEAT_ALTA">Seating angled</option>
 						<option class="ms-2012 rd mx m3" value="STUD_SEAT">Seating side</option>
-						<option class="ms-2012 rd" value="OUT1_3QTR">Outside 3D</option>
+						<option class="ms-2012 rd" value="OUT1_3QTR">Outside front angled</option>
 					</optgroup>
 				</select>
 				<select class="m3" id="background-m3">
@@ -139,9 +139,9 @@
 						<option class="ms" value="RFP2">Pano Sunroof v2</option>
 						<option class="ms-2016" value="RFFG">Full Glass</option>
 						<option class="rd" value="TOP3">None</option>
-						<option class="rd" value="TOP0">Solid Black</option>
-						<option class="rd" value="TOP1">Solid Color</option>
-						<option class="rd" value="TOP2">Solid Clear</option>
+						<option class="rd" value="TOP0">Black Soft Top</option>
+						<option class="rd" value="TOP1">Color Hard Top</option>
+						<option class="rd" value="TOP2">Clear Hard Top</option>
 					</select>
 				</label>
 				<label class="ms mx">Brakes
@@ -153,12 +153,42 @@
 				<label class="ms mx"><input id="rearspoiler" type="checkbox"/>Rear Spoiler</label>
 				<label class="rd"><input id="carbonkit" type="checkbox"/>Carbon Fiber Kit</label>
 			</fieldset>
-			<fieldset class="ms mx">
+			<fieldset class="ms mx rd">
 				<legend>Interior</legend>
 				<label class="ms mx">Drive
 					<select id="drive">
 						<option value="DRLH">Left</option>
 						<option value="DRRH">Right</option>
+					</select>
+				</label>
+				<label class="rd">Seat type
+					<select class="rd" id="rd-seat-type">
+						<option value="INT1">Premium two-tone</option>
+						<option value="INT2">Premium single-tone</option>
+						<option value="INT4">Standard</option>
+						<option value="INT5">Executive</option>
+						<option value="INT6">Executive Carbon Fiber</option>
+					</select>
+				</label>
+				<label class="rd">Color
+					<select class="rd" id="rd-seat-color">
+						<option value="BK">Black</option>
+						<option value="BG">Beige</option>
+						<option value="DG">Dark Gray</option>
+						<option value="SD">Saddle</option>
+					</select>
+				</label>
+				<label id="rd-accent" class="rd">Accent color
+					<select class="rd" id="rd-accent-color">
+						<option value="BK">Black</option>
+						<option value="BG">Beige</option>
+						<option value="CR">Cream</option>
+						<option value="DG">Dark Gray</option>
+						<option value="LG">Light Gray</option>
+						<option value="OR">Orange</option>
+						<option value="RD">Red</option>
+						<option value="SD">Saddle</option>
+						<option value="YL">Yellow</option>
 					</select>
 				</label>
 				<label class="ms mx">Seats

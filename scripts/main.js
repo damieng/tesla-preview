@@ -1,6 +1,6 @@
 'use strict'
 
-const optionIds = ['paint', 'wheels', 'roof', 'drive', 'seats', 'seating', 'console', 'decor', 'headliner', 'brakes']
+const optionIds = ['paint', 'wheels', 'roof', 'drive', 'seats', 'seating', 'console', 'decor', 'headliner', 'brakes', 'rd-seat-type', 'rd-seat-color', 'rd-accent-color']
 function $(id) { return document.getElementById(id) }
 const allImages = $('visual').getElementsByTagName('img')
 const single = $('single')
@@ -19,7 +19,17 @@ function captureChanges() {
   model.onchange = () => { setModel(); setBackgroundOptions(); }
   view.onchange = setBackgroundOptions
   window.onresize = updateUrl
-  $('options').onchange = updateUrl
+  $('options').onchange = optionsChanged
+}
+
+function optionsChanged() {
+  switch (model.value) {
+    case 'rd': {
+      console.log($('rd-seat-type').value)
+      setVisibility([$('rd-accent')], !(['INT2', 'INT4'].includes($('rd-seat-type').value)))
+    }
+  }
+  updateUrl()
 }
 
 function deselectUnavailableOptions() {
@@ -156,6 +166,14 @@ function buildParts() {
       parts.bkba_opt = background.value
   }
 
+  if (model.value === 'rd') {
+    parts.options.push([
+      $('rd-seat-type').value,
+      $('rd-seat-color').value,
+      $('rd-accent-color').value
+    ].join('.'))
+  }
+
   if (model.value === 'ms-2016') parts.options.push('MI01')
   if ($('rearspoiler').checked) parts.options.push('X019')
   if ($('carbonkit').checked) parts.options.push('EXT1')
@@ -170,5 +188,5 @@ function buildUrl(parts, extras) {
 }
 
 function buildOptions() {
-  return optionIds.map(id => $(id)).filter(e => !isUnavailable(e)).map(e => e.value).filter(v => v != null && v != '')
+  return optionIds.filter(id => !id.includes('-')).map(id => $(id)).filter(e => !isUnavailable(e)).map(e => e.value).filter(v => v != null && v != '')
 }
