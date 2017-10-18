@@ -19,7 +19,11 @@ fieldset {
 	display: inline-block;
 	padding-left: 0;
 	padding-right: 0;
-	margin: 0 1em 0 0 ;
+	margin: 0 1em 0 0;
+}
+
+fieldset > :last-child {
+	margin-right: 0;
 }
 
 label {
