@@ -13,6 +13,11 @@ const view = byId('view')
 const ms2012showroomOnly = ['STUD_ABOV', 'STUD_SEAT_DRIVER', 'STUD_SEAT_3QTR', 'OUT1_3QTR', 'STUD_SEAT']
 const ms2012notTransparent = ['STUD_3QTR', 'STUD_REAR', 'STUD_SEAT_ABOVE']
 
+if (document.referrer.includes('roadster')) {
+  model.value = 'rd'
+}
+
+
 setAttributes(allImages, 'onload', "this.classList.remove('loading')")
 captureChanges()
 setModel()
