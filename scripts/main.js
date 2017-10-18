@@ -186,6 +186,7 @@ function buildParts() {
   if (model.value === 'ms-2016') parts.options.push('MI01')
   if (byId('rearspoiler').checked) parts.options.push('X019')
   if (byId('carbonkit').checked) parts.options.push('EXT1')
+  if (byId('sport').checked) parts.options.push('RS1')
   return parts
 }
 
