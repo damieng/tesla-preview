@@ -46,6 +46,7 @@ function isUnavailable(element) {
 
 function setModel() {
   setVisibility(document.getElementsByClassName('m3'), false)
+  setVisibility(document.getElementsByClassName('rd'), false)
   setVisibility(document.getElementsByClassName('ms'), false)
   setVisibility(document.getElementsByClassName('mx'), false)
   setVisibility(document.getElementsByClassName('ms-2012'), false)
@@ -54,6 +55,10 @@ function setModel() {
   switch (model.value) {
     case 'm3': {
       setVisibility(document.getElementsByClassName('m3'), true)
+      break
+    }
+    case 'rd': {
+      setVisibility(document.getElementsByClassName('rd'), true)
       break
     }
     case 'ms-2012': {
@@ -76,7 +81,7 @@ function setModel() {
 }
 
 function setBackgroundOptions() {
-  setVisibility([background], model.value !== 'm3')
+  setVisibility([background], model.value !== 'm3' && model.value !== 'rd')
   setVisibility(background.options, true)
   if (view.value === 'STUD_SEAT' || view.value === 'STUD_SEAT_ALTA') {
     setVisibility([background], false)
@@ -153,6 +158,7 @@ function buildParts() {
 
   if (model.value === 'ms-2016') parts.options.push('MI01')
   if ($('rearspoiler').checked) parts.options.push('X019')
+  if ($('carbonkit').checked) parts.options.push('EXT1')
   return parts
 }
 

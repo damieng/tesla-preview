@@ -17,6 +17,7 @@
 				<legend>Model</legend>
 				<select id="model">
 					<option value="m3">3</option>
+					<option value="rd">Roadster</option>
 					<option value="ms-2012">S (2012)</option>
 					<option value="ms-2016">S (2016)</option>
 					<option value="mx">X</option>
@@ -26,16 +27,17 @@
 				<legend>Render</legend>
 				<select id="view">
 						<option class="ms" value="STUD_ABOV">Rear above</option>
+						<option class="rd" value="STUD_FRNT">Front</option>
 						<option value="STUD_3QTR">Front angled</option>
-						<option class="ms mx" value="STUD_REAR">Rear angled</option>
+						<option class="ms mx rd" value="STUD_REAR">Rear angled</option>
 						<option selected="selected" value="STUD_SIDE">Side profile</option>
 						<option class="m3" value="STUD_WHEEL">Wheels close-up</option>
 						<option class="ms mx" value="STUD_SEAT_ABOVE">Seating above</option>
 						<option class="ms-2012" value="STUD_SEAT_DRIVER">Drivers seat</option>
 						<option class="ms-2012" value="STUD_SEAT_3QTR">Passenger seat</option>
 						<option class="ms" value="STUD_SEAT_ALTA">Seating angled</option>
-						<option class="ms-2012 mx m3" value="STUD_SEAT">Seating side</option>
-						<option class="ms-2012" value="OUT1_3QTR">Outside 3D</option>
+						<option class="ms-2012 rd mx m3" value="STUD_SEAT">Seating side</option>
+						<option class="ms-2012 rd" value="OUT1_3QTR">Outside 3D</option>
 					</optgroup>
 				</select>
 				<select class="m3" id="background-m3">
@@ -60,6 +62,8 @@
 							<option class="m3" value="PBSB">Black</option>
 							<option class="ms mx" value="COL1-PBSB">Eclipse Black</option>
 							<option class="ms mx" value="COL1-PBCW">Catalina White</option>
+							<option class="rd" value="COL1-FURD">Fusion Red</option>
+							<option class="rd" value="COL1-RAGR">Racing Green</option>
 						</optgroup>
 						<optgroup label="Metallic">
 							<option class="m3" value="PPSB">Deep Blue</option>
@@ -74,12 +78,26 @@
 							<option class="ms-2012" value="COL2-PMTG">Dolphin Gray</option>
 							<option class="ms-2012" value="COL2-PMMB">Pacific Blue</option>
 							<option class="ms-2012" value="COL2-PMSG">Sequoia Green</option>
+							<option class="rd" value="COL2-RARD">Radiant Red</option>
+							<option class="rd" value="COL2-BRYL">Brilliant Yellow</option>
+							<option class="rd" value="COL2-GLBL">Glacier Blue</option>
+							<option class="rd" value="COL2-OBBK">Obsidian Black</option>
+							<option class="rd" value="COL2-STSL">Sterling Silver</option>
+							<option class="rd" value="COL2-TWBL">Twilight Blue</option>
 						</optgroup>
-						<optgroup label="Multi-Coat">
+						<optgroup class="m3 ms mx" label="Multi-Coat">
 							<option class="m3" value="PPSW">Pearl White</option>
 							<option class="m3" value="PPMR">Red</option>
 							<option class="ms mx" value="COL3-PPSW">Pearl White</option>
 							<option class="ms mx" value="COL3-PPMR">Sunset Red</option>
+						</optgroup>
+						<optgroup class="rd" label="Premium">
+							<option value="COL3-THGR">Thunder Grey</option>
+							<option value="COL3-VYOR">Very Orange</option>
+							<option value="COL3-JTBK">Jet Black</option>
+							<option value="COL3-ELBL">Electric Blue</option>
+							<option value="COL3-LIGR">Lightning Green</option>
+							<option value="COL3-ARWH">Arctic White</option>
 						</optgroup>
 					</select>
 				</label>
@@ -87,6 +105,9 @@
 					<select id="wheels">
 						<option class="m3" value="W38B">18″ Aero</option>
 						<option class="m3" value="W39B">19″ Sport</option>
+						<option class="rd" value="WHL1">Cast Aluminum</option>
+						<option class="rd" selected="selected" value="WHL2">Forged Silver</option>
+						<option class="rd" value="WHL3">Forged Black</option>
 						<optgroup class="ms" label="19″">
 							<option class="ms-2012" value="WT19">Silver Split 5-Spoke</option>
 							<option class="ms-2012" value="WTAE">Silver Aero</option>
@@ -110,13 +131,17 @@
 						</optgroup>
 					</select>
 				</label>
-				<label class="ms">Roof
+				<label class="ms rd">Roof
 					<select id="roof">
 						<option class="ms-2012" value="RFBK">Solid Black</option>
-						<option value="RFBC">Solid Color</option>
-						<option value="RFPO">Pano Sunroof</option>
-						<option value="RFP2">Pano Sunroof v2</option>
+						<option class="ms" value="RFBC">Solid Color</option>
+						<option class="ms" value="RFPO">Pano Sunroof</option>
+						<option class="ms" value="RFP2">Pano Sunroof v2</option>
 						<option class="ms-2016" value="RFFG">Full Glass</option>
+						<option class="rd" value="TOP3">None</option>
+						<option class="rd" value="TOP0">Solid Black</option>
+						<option class="rd" value="TOP1">Solid Color</option>
+						<option class="rd" value="TOP2">Solid Clear</option>
 					</select>
 				</label>
 				<label class="ms mx">Brakes
@@ -125,7 +150,8 @@
 						<option value="BC0R">Red</option>
 					</select>
 				</label>
-				<label id="spoiler" class="ms mx"><input id="rearspoiler" type="checkbox"/>Rear Spoiler</label>
+				<label class="ms mx"><input id="rearspoiler" type="checkbox"/>Rear Spoiler</label>
+				<label class="rd"><input id="carbonkit" type="checkbox"/>Carbon Fiber Kit</label>
 			</fieldset>
 			<fieldset class="ms mx">
 				<legend>Interior</legend>
