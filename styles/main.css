@@ -94,6 +94,10 @@ img[onclick] {
 	left: 0
 }
 
+.flip {
+  transform: scaleX(-1);
+}
+
 img {
 	-webkit-user-select: none;
 	-khtml-user-select: none;

@@ -17,7 +17,6 @@ if (document.referrer.includes('roadster')) {
   model.value = 'rd'
 }
 
-
 setAttributes(allImages, 'onload', "this.classList.remove('loading')")
 captureChanges()
 setModel()
@@ -27,6 +26,7 @@ updateUrl()
 function captureChanges() {
   model.onchange = () => { setModel(); setBackgroundOptions(); }
   view.onchange = setBackgroundOptions
+  flip.onchange = () => single.classList.toggle('flip')
   window.onresize = updateUrl
   byId('options').onchange = optionsChanged
 }
