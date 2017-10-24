@@ -184,9 +184,10 @@ function buildParts() {
   }
 
   if (model.value === 'ms-2016') parts.options.push('MI01')
-  if (byId('rearspoiler').checked) parts.options.push('X019')
-  if (byId('carbonkit').checked) parts.options.push('EXT1')
-  if (byId('sport').checked) parts.options.push('RS1')
+
+  const allCheckboxes = Array.from(document.querySelectorAll('input[type=checkbox]'))
+
+  parts.options.push(...allCheckboxes.filter(d => d.checked && !isUnavailable(d) && d.onchange == null).map(d => d.id))
   return parts
 }
 
