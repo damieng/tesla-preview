@@ -18,6 +18,8 @@ if (document.referrer.includes('roadster')) {
 }
 
 setAttributes(allImages, 'onload', "this.classList.remove('loading')")
+applyQueryParameters()
+single.classList.toggle('flip', flip.checked)
 captureChanges()
 setModel()
 setBackgroundOptions()
@@ -26,7 +28,7 @@ updateUrl()
 function captureChanges() {
   model.onchange = () => { setModel(); setBackgroundOptions(); }
   view.onchange = setBackgroundOptions
-  flip.onchange = () => single.classList.toggle('flip')
+  flip.onchange = () => single.classList.toggle('flip', flip.checked)
   window.onresize = updateUrl
   byId('options').onchange = optionsChanged
 }
@@ -144,6 +146,7 @@ function setVisibility(elements, visible) {
 function updateUrl() {
   Array.from(allImages).forEach(i => i.classList.add('loading'))
   const parts = buildParts()
+  history.pushState({}, '', '?' + getQueryValues())
   switch (view.value) {
     default: {
       single.hidden = false
@@ -189,6 +192,30 @@ function buildParts() {
 
   parts.options.push(...allCheckboxes.filter(d => d.checked && !isUnavailable(d) && d.onchange == null).map(d => d.id))
   return parts
+}
+
+function getQueryValues() {
+  return Array.from(document.querySelectorAll('#options select, #options input'))
+    .filter(e => !isUnavailable(e))
+    .map(c => `${c.id}=${c.type === 'checkbox' ? c.checked ? 'y' : 'n' : c.value}`)
+    .join('&')
+}
+
+function applyQueryParameters() {
+  if (window.location.search == null || window.location.search.length < 2) return
+  const parameters = window.location.search.substr(1).split('&').map(p => p.split('='))
+  for (const parameter of parameters) {
+    const field = document.getElementById(parameter[0])
+    if (field.type === 'checkbox') {
+      if (parameter[1] === 'y') {
+        field.setAttribute('checked', 'checked')
+      } else {
+        field.removeAttribute('checked')
+      }
+    } else {
+      field.value = parameter[1]
+    }
+  }
 }
 
 function buildUrl(parts, extras) {
