@@ -17,7 +17,7 @@ if (document.referrer.includes('roadster')) {
   model.value = 'rd'
 }
 
-setAttributes(allImages, 'onload', "this.classList.remove('loading')")
+setAttributes(allImages, 'onload', 'this.classList.remove("loading")')
 applyQueryParameters()
 single.classList.toggle('flip', flip.checked)
 captureChanges()
@@ -146,11 +146,13 @@ function setVisibility(elements, visible) {
 function updateUrl() {
   Array.from(allImages).forEach(i => i.classList.add('loading'))
   const parts = buildParts()
-  history.pushState({}, '', '?' + getQueryValues())
+  const title = `My ${byId('paint').selectedOptions[0].text} ${model.selectedOptions[0].text}`
+  history.pushState({}, title, '?' + getQueryValues())
+  window.title = title
   switch (view.value) {
     default: {
       single.hidden = false
-      single.src = buildUrl(parts, { "view": view.value, "size": getWidth(single) })
+      single.src = buildUrl(parts, { 'view': view.value, 'size': getWidth(single) })
       single.title = parts.options.join(',')
     }
   }
@@ -167,8 +169,8 @@ function setAttributes(elements, attr, value) {
 
 function buildParts() {
   const parts = {
-    "model": model.value.split('-')[0],
-    "options": buildOptions()
+    'model': model.value.split('-')[0],
+    'options': buildOptions()
   }
 
   if (model.value === 'm3') {
