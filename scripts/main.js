@@ -4,7 +4,7 @@ const byId = id => document.getElementById(id)
 const byTag = tag => document.getElementsByTagName(tag)
 const byClass = className => document.getElementsByClassName(className)
 
-const optionIds = ['paint', 'wheels', 'roof', 'drive', 'seats', 'seating', 'console', 'decor', 'headliner', 'brakes', 'rd-seat-type', 'rd-seat-color', 'rd-accent-color']
+const optionIds = ['paint', 'wheels', 'roof', 'drive', 'seats', 'seating', 'console', 'decor', 'headliner', 'dash', 'brakes', 'rd-seat-type', 'rd-seat-color', 'rd-accent-color']
 
 const allImages = byId('visual').getElementsByTagName('img')
 const single = byId('single')
