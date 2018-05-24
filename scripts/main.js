@@ -224,7 +224,12 @@ function buildUrl(parts, extras) {
   const combined = { }
   Object.assign(combined, parts, extras)
   const params = Object.entries(combined).map(kv => `${kv[0]}=${kv[1]}`).join('&')
-  return `https://www.tesla.com/configurator/compositor/?${params}`
+  const site = isCurrent() ? 'static-assets' : 'www';
+  return `https://${site}.tesla.com/configurator/compositor/?${params}`
+}
+
+function isCurrent() {
+  return ['rd', 'ms-2012'].indexOf(model.value) == -1;
 }
 
 function buildOptions() {

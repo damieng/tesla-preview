@@ -3,7 +3,7 @@ body {
 	color: #111;
 	font-family: 'Fira Sans Condensed', sans-serif;
 	font-size: 90%;
-  height: 100vh;
+	height: 100vh;
 	margin: 0;
 	padding: 0;
 }
@@ -77,6 +77,65 @@ legend {
 .loading {
 	animation: fadeout 2s;
 	animation-fill-mode: forwards;
+}
+
+.info-panel {
+	display: inline-block;
+	opacity: 0.8;
+	position: relative;
+}
+
+.info-panel a {
+	background: #c00;
+    border: 2px solid #c00;
+    border-radius: 1em;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    height: 1em;
+	line-height: 1em;
+    text-align: center;
+	text-decoration: none;
+    vertical-align: middle;
+    width: 1em;
+}
+
+.info-panel .release-notes {
+	background-color: #eee;
+	border: 2px solid #c00;
+	box-shadow: 0 10px 10px -5px rgba(96, 96, 96, 0.6);
+	display: none;
+	font-weight: bold;
+	padding: 8px;
+	min-width: 10em;
+	height: 10em;
+	position: absolute;
+	overflow: hidden;
+	text-align: center;
+}
+
+.release-notes li {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+.release-notes ol {
+	font-weight: normal;
+	list-style-type: none;
+	margin: 0.5em 0;
+	padding: 0;
+}
+
+.release-notes ul {
+	font-size: 90%;
+	margin: 0;
+	padding: 4px 0 1em 1.4em;
+	list-style-type: square;
+}
+
+.info-panel a:hover + .release-notes {
+	display: block;
 }
 
 @keyframes fadeout {
