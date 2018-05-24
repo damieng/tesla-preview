@@ -80,17 +80,18 @@ legend {
 }
 
 .info-panel {
-	display: inline-block;
-	opacity: 0.8;
+	float: right;
+	margin: 1em;
+	opacity: 0.9;
 	position: relative;
 }
 
-.info-panel a {
+.info-panel > a {
 	background: #c00;
     border: 2px solid #c00;
     border-radius: 1em;
     color: #fff;
-    display: inline-block;
+	display: inline-block;
     font-weight: bold;
     height: 1em;
 	line-height: 1em;
@@ -107,10 +108,9 @@ legend {
 	display: none;
 	font-weight: bold;
 	padding: 8px;
+	margin-left: -10em;
 	min-width: 10em;
-	height: 10em;
 	position: absolute;
-	overflow: hidden;
 	text-align: center;
 }
 
@@ -123,7 +123,7 @@ legend {
 .release-notes ol {
 	font-weight: normal;
 	list-style-type: none;
-	margin: 0.5em 0;
+	margin: 1em 0;
 	padding: 0;
 }
 
@@ -132,6 +132,10 @@ legend {
 	margin: 0;
 	padding: 4px 0 1em 1.4em;
 	list-style-type: square;
+}
+
+.release-notes a {
+	font-weight: normal;
 }
 
 .info-panel a:hover + .release-notes {
