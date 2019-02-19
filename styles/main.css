@@ -98,7 +98,8 @@ legend {
     text-align: center;
 	text-decoration: none;
     vertical-align: middle;
-    width: 1em;
+	width: 1em;
+	z-index: 1000;
 }
 
 .info-panel .release-notes {
