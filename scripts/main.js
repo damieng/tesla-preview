@@ -212,14 +212,16 @@ function applyQueryParameters() {
   const parameters = window.location.search.substr(1).split('&').map(p => p.split('='))
   for (const parameter of parameters) {
     const field = document.getElementById(parameter[0])
-    if (field.type === 'checkbox') {
-      if (parameter[1] === 'y') {
-        field.setAttribute('checked', 'checked')
+    if (field) {
+      if (field.type === 'checkbox') {
+        if (parameter[1] === 'y') {
+          field.setAttribute('checked', 'checked')
+        } else {
+          field.removeAttribute('checked')
+        }
       } else {
-        field.removeAttribute('checked')
+        field.value = parameter[1]
       }
-    } else {
-      field.value = parameter[1]
     }
   }
 }
