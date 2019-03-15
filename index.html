@@ -19,9 +19,12 @@
 				<option value="ms-2012">S (2012)</option>
 				<option value="ms-2016">S (2016)</option>
 				<option value="mx">X</option>
+				<option value="my">Y</option>
 			</select>
-			<label class="m3">
-				<input id="MT304" type="checkbox" />Performance
+			<label class="m3 my">
+				<input class="m3" id="MT304" type="checkbox" />
+				<input class="my" id="MTY04" type="checkbox" />
+				Performance
 			</label>
 		</fieldset>
 		<fieldset>
@@ -32,16 +35,16 @@
 				<option selected="selected" value="STUD_3QTR">Front angled</option>
 				<option value="STUD_REAR">Rear angled</option>
 				<option value="STUD_SIDE">Side profile</option>
-				<option class="m3" value="STUD_DRIVER">Drivers seat</option>
-				<option class="m3" value="STUD_WHEEL">Wheels close-up</option>
+				<option class="m3 my" value="STUD_DRIVER">Drivers seat</option>
+				<option class="m3 my" value="STUD_WHEEL">Wheels close-up</option>
 				<option class="ms mx" value="STUD_SEAT_ABOVE">Seating above</option>
 				<option class="ms-2012" value="STUD_SEAT_DRIVER">Drivers seat</option>
 				<option class="ms-2012" value="STUD_SEAT_3QTR">Passenger seat</option>
 				<option class="ms" value="STUD_SEAT_ALTA">Seating angled</option>
-				<option class="ms-2012 rd mx m3" value="STUD_SEAT">Seating side</option>
+				<option class="ms-2012 rd mx m3 my" value="STUD_SEAT">Seating side</option>
 				<option class="ms-2012 rd" value="OUT1_3QTR">Outside front angled</option>
 			</select>
-			<select class="m3" id="background-m3">
+			<select class="m3 my" id="background-m3">
 				<option value="0">Studio</option>
 				<option value="1">Transparent</option>
 			</select>
@@ -62,17 +65,17 @@
 						<option value="COL0-PPSR">Red</option>
 					</optgroup>
 					<optgroup label="Solid">
-						<option class="m3" value="PBSB">Black</option>
+						<option class="m3 my" value="PBSB">Black</option>
 						<option class="ms mx" value="COL1-PBSB">Eclipse Black</option>
 						<option class="ms mx" value="COL1-PBCW">Catalina White</option>
 						<option class="rd" value="COL1-FURD">Fusion Red</option>
 						<option class="rd" value="COL1-RAGR">Racing Green</option>
 					</optgroup>
 					<optgroup label="Metallic">
-						<option class="m3" value="PPSB">Deep Blue</option>
-						<option class="m3" value="PMBL">Obsidian Black</option>
-						<option class="m3" value="PMNG">Midnight Silver</option>
-						<option class="m3" value="PMSS">Starlight Silver</option>
+						<option class="m3 my" value="PPSB">Deep Blue</option>
+						<option class="m3 my" value="PMBL">Obsidian Black</option>
+						<option class="m3 my" value="PMNG">Midnight Silver</option>
+						<option class="m3 my" value="PMSS">Starlight Silver</option>
 						<option class="ms mx" value="COL2-PPSB">Deep Blue</option>
 						<option class="ms mx" value="COL2-PMBL">Obsidian Black</option>
 						<option class="ms mx" value="COL2-PMNG">Midnight Silver</option>
@@ -89,9 +92,9 @@
 						<option class="rd" value="COL2-STSL">Sterling Silver</option>
 						<option class="rd" value="COL2-TWBL">Twilight Blue</option>
 					</optgroup>
-					<optgroup class="m3 ms mx" label="Multi-Coat">
-						<option class="m3" value="PPSW">Pearl White</option>
-						<option class="m3" value="PPMR">Red</option>
+					<optgroup class="m3 ms mx my" label="Multi-Coat">
+						<option class="m3 my" value="PPSW">Pearl White</option>
+						<option class="m3 my" value="PPMR">Red</option>
 						<option class="ms mx" value="COL3-PPSW">Pearl White</option>
 						<option class="ms mx" value="COL3-PPMR">Sunset Red</option>
 					</optgroup>
@@ -107,6 +110,9 @@
 			</label>
 			<label>Wheels
 				<select id="wheels">
+					<option class="my" value="WY18B">18″ Aero</option>
+					<option class="my" value="WY19B">19″ Sport</option>
+					<option class="my" id="y-perf-wheels" value="WY20P">20″ Performance</option>
 					<option class="m3" value="W38B">18″ Aero</option>
 					<option class="m3" value="W39B">19″ Sport</option>
 					<option class="m3" id="3-perf-wheels" value="W39P">19″ Performance</option>
@@ -166,7 +172,7 @@
 			<label class="rd">
 				<input id="RS1" type="checkbox" />Sport</label>
 		</fieldset>
-		<fieldset class="ms mx rd m3">
+		<fieldset class="ms mx rd m3 my">
 			<legend>Interior</legend>
 			<label class="ms mx">Drive
 				<select id="drive">
@@ -207,11 +213,15 @@
 			<label class="rd">
 				<input id="ELT1" type="checkbox" />Infotainment
 			</label>
-			<label class="ms mx m3">Seats
+			<label class="ms mx m3 my">Seats
 				<select id="seats">
 					<optgroup class="m3" label="Premium">
 						<option value="IN3PB">Black</option>
 						<option value="IN3PW">White</option>
+					</optgroup>
+					<optgroup class="my" label="Premium">
+						<option value="INYPB">Black</option>
+						<option value="INYPW">White</option>
 					</optgroup>
 					<optgroup class="ms mx" label="Textile">
 						<option class="ms-2012" value="IBMB">Black</option>
@@ -317,7 +327,12 @@
 			<div class="release-notes">
 				Release notes
 				<ol>
-						<li>04 January 2019
+					<li>14 April 2019
+						<ul>
+							<li>Y introduction</li>
+						</ul>
+					</li>
+					<li>04 January 2019
 						<ul>
 							<li>3 performance &amp; 19" wheels</li>
 							<li>X light headliner</li>
@@ -364,6 +379,7 @@
 				</ol>
 			</div>
 		</span>
+		<input type="hidden" id="extras" />
 	</form>
 	<section id="visual">
 		<img id="single" class="checkerboard" />

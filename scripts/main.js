@@ -35,6 +35,10 @@ function captureChanges() {
 
 function optionsChanged() {
   switch (model.value) {
+    case 'my': {
+      byId('y-perf-wheels').disabled = byId('MTY04').checked ? '' : 'disabled';
+      break;
+    }
     case 'm3': {
       byId('3-perf-wheels').disabled = byId('MT304').checked ? '' : 'disabled';
       break;
@@ -70,6 +74,7 @@ function isUnavailable(element) {
 }
 
 function setModel() {
+  setVisibility(byClass('my'), false)
   setVisibility(byClass('m3'), false)
   setVisibility(byClass('rd'), false)
   setVisibility(byClass('ms'), false)
@@ -78,6 +83,10 @@ function setModel() {
   setVisibility(byClass('ms-2016'), false)
 
   switch (model.value) {
+    case 'my': {
+      setVisibility(byClass('my'), true)
+      break
+    }
     case 'm3': {
       setVisibility(byClass('m3'), true)
       break
@@ -106,7 +115,7 @@ function setModel() {
 }
 
 function setBackgroundOptions() {
-  setVisibility([background], model.value !== 'm3' && model.value !== 'rd')
+  setVisibility([background], model.value !== 'm3' && model.value !== 'rd' && model.value !== 'my')
   setVisibility(background.options, true)
   if (view.value === 'STUD_SEAT' || view.value === 'STUD_SEAT_ALTA') {
     setVisibility([background], false)
@@ -177,7 +186,7 @@ function buildParts() {
     'options': buildOptions()
   }
 
-  if (model.value === 'm3') {
+  if (model.value === 'm3' || model.value === 'my') {
     parts.bkba_opt = byId('background-m3').value
   } else {
     if (!isUnavailable(background.options[background.selectedIndex]))
@@ -193,6 +202,10 @@ function buildParts() {
   }
 
   if (model.value === 'ms-2016') parts.options.push('MI01')
+  if (model.value === 'my') {
+    parts.model = '3a1d1c6cdccb462405eee5db90fcbd39' // Was hidden from configurator
+    parts.options.push('MTY03')
+  }
 
   const allCheckboxes = Array.from(document.querySelectorAll('input[type=checkbox]'))
 
