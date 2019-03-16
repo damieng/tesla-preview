@@ -35,10 +35,6 @@ function captureChanges() {
 
 function optionsChanged() {
   switch (model.value) {
-    case 'my': {
-      byId('y-perf-wheels').disabled = byId('MTY04').checked ? '' : 'disabled';
-      break;
-    }
     case 'm3': {
       byId('3-perf-wheels').disabled = byId('MT304').checked ? '' : 'disabled';
       break;
