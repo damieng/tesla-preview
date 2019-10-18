@@ -112,19 +112,26 @@
 			</label>
 			<label>Wheels
 				<select id="wheels">
-					<option class="my" value="WY18B">18″ Aero</option>
-					<option class="my" value="WY19B">19″ Sport</option>
-					<option class="my" value="WY19P">19″ Performance</option>
-					<option class="my" value="WY20P">20″ Performance</option>
-					<option class="my" value="WY20P">20″ Performance</option>
-					<option class="m3" value="W38B">18″ Aero</option>
-					<option class="m3" value="W39B">19″ Sport</option>
-					<option class="m3" value="W39P">19″ Performance</option>
-					<option class="m3" value="W32P">20″ Sport</option>
-					<option class="m3" value="W32D">20″ Sport Gray Performance</option>
-					<option class="rd" value="WHL1">Cast Aluminum</option>
-					<option class="rd" selected="selected" value="WHL2">Forged Silver</option>
-					<option class="rd" value="WHL3">Forged Black</option>
+					<optgroup class="my m3" label="18″">
+						<option class="my" value="WY18B">18″ Aero</option>
+						<option class="m3" value="W38B">18″ Aero</option>
+					</optgroup>
+					<optgroup class="my m3" label="19″">
+						<option class="my" value="WY19B">19″ Sport</option>
+						<option class="m3" value="W39B">19″ Sport</option>
+						<option class="my" value="WY19P">19″ Performance</option>
+						<option class="m3" value="W39P">19″ Performance</option>
+					</optgroup>
+					<optgroup class="my m3" label="20″">
+						<option class="my" value="WY20P">20″ Performance</option>
+						<option class="m3" value="W32P">20″ Sport</option>
+						<option class="m3" value="W32D">20″ Sport Gray Performance</option>
+					</optgroup>
+					<optgroup class="td" label="16″/17″">
+						<option class="rd" value="WHL1">Cast Aluminum</option>
+						<option class="rd" selected="selected" value="WHL2">Forged Silver</option>
+						<option class="rd" value="WHL3">Forged Black</option>
+					</optgroup>
 					<optgroup class="ms" label="19″">
 						<option class="ms-2012" value="WT19">Silver Split 5-Spoke</option>
 						<option class="ms-2012" value="WTAE">Silver Aero</option>
@@ -148,7 +155,7 @@
 						<option value="WT22">Silver Turbine</option>
 						<option value="WTUT">Black Turbine</option>
 					</optgroup>
-					<optgroup label="Visual″">
+					<optgroup label="Visual">
 						<option value="WT00">None</option>
 					</optgroup>
 				</select>
