@@ -14,10 +14,11 @@
 		<fieldset>
 			<legend>Model</legend>
 			<select id="model">
-				<option value="m3">3</option>
 				<option value="rd">Roadster</option>
 				<option value="ms-2012">S (2012)</option>
 				<option value="ms-2016">S (2016)</option>
+				<option value="ms-2019">S (2019)</option>
+				<option value="m3">3</option>
 				<option value="mx">X</option>
 				<option value="my">Y</option>
 			</select>
@@ -33,6 +34,7 @@
 				<option class="ms" value="STUD_ABOV">Rear above</option>
 				<option class="rd" value="STUD_FRNT">Front</option>
 				<option selected="selected" value="STUD_3QTR">Front angled</option>
+				<option class="ms-2019" value="STUD_3QTR_V2">Front angled</option>
 				<option class="m3 rd ms mx" value="STUD_REAR">Rear angled</option>
 				<option class="m3 rd ms mx" value="STUD_SIDE">Side profile</option>
 				<option class="m3" value="STUD_DRIVER">Drivers seat</option>
@@ -40,6 +42,7 @@
 				<option class="ms mx" value="STUD_SEAT_ABOVE">Seating above</option>
 				<option class="ms-2012" value="STUD_SEAT_DRIVER">Drivers seat</option>
 				<option class="ms-2012" value="STUD_SEAT_3QTR">Passenger seat</option>
+				<option class="ms-2019" value="STUD_SEAT_V2">Passenger seat</option>
 				<option class="ms" value="STUD_SEAT_ALTA">Seating angled</option>
 				<option class="ms-2012 rd mx m3 my" value="STUD_SEAT">Seating side</option>
 				<option class="ms-2012 rd" value="OUT1_3QTR">Outside front angled</option>
@@ -114,10 +117,12 @@
 					<option class="my" value="WY19B">19″ Sport</option>
 					<option class="my" value="WY19P">19″ Performance</option>
 					<option class="my" value="WY20P">20″ Performance</option>
+					<option class="my" value="WY20P">20″ Performance</option>
 					<option class="m3" value="W38B">18″ Aero</option>
 					<option class="m3" value="W39B">19″ Sport</option>
-					<option class="m3" id="3-perf-wheels" value="W39P">19″ Performance</option>
+					<option class="m3" value="W39P">19″ Performance</option>
 					<option class="m3" value="W32P">20″ Sport</option>
+					<option class="m3" value="W32D">20″ Sport Gray "Performance"</option>
 					<option class="rd" value="WHL1">Cast Aluminum</option>
 					<option class="rd" selected="selected" value="WHL2">Forged Silver</option>
 					<option class="rd" value="WHL3">Forged Black</option>
@@ -328,6 +333,12 @@
 			<div class="release-notes">
 				Release notes
 				<ol>
+					<li>18 October 2019
+						<ul>
+							<li>Model S (2019) with new views</li>
+							<li>Model 3 sport "performance" grey wheels</li>
+						</ul>
+					</li>
 					<li>15 April 2019
 						<ul>
 							<li>Y 19" performance wheels</li>

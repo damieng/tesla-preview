@@ -35,10 +35,6 @@ function captureChanges() {
 
 function optionsChanged() {
   switch (model.value) {
-    case 'm3': {
-      byId('3-perf-wheels').disabled = byId('MT304').checked ? '' : 'disabled';
-      break;
-    }
     case 'rd': {
       setVisibility([byId('rd-accent')], !(['INT2', 'INT4'].includes(byId('rd-seat-type').value)))
       break;
