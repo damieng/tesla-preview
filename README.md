@@ -1,4 +1,4 @@
-# tesla-preview
+# Tesla Preview
 
 This is a simple page that allows you to configure the [Roadster](https://damieng.github.io/tesla-preview/?model=rd), [Model S](https://damieng.github.io/tesla-preview/?model=ms), [Model X](https://damieng.github.io/tesla-preview/?model=mx), [Model 3](https://damieng.github.io/tesla-preview/?model=m3) and [Model Y](https://damieng.github.io/tesla-preview/?model=my) from a simple web page.
 
